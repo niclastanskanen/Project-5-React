@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineLogin, AiOutlineUserAdd } from 'react-icons/ai';
 import shareVideo from '../assets/share.mp4'
 import logo from '../assets/logo-white.png'
@@ -27,20 +27,24 @@ const Login = () => {
               />
             </div>
             <div className='shadow-2x1 pb-4'>
+              <Link to='/signin'>
               <button
                 type='button'
                 className='bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none'
               >
                 <AiOutlineLogin className='mr-4'/> Sign In
               </button>
+              </Link>
             </div>
             <div className='shadow-2x1'>
+              <Link to='/signup'>
               <button
                 type='button'
                 className='bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none'
               >
                 <AiOutlineUserAdd className='mr-4'/> Create an account
               </button>
+              </Link>
             </div>
           </div>
         </div>
