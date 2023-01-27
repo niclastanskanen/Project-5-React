@@ -1,5 +1,5 @@
-// import axios from "axios";
+import axios from "axios";
 
-// axios.defaults.baseURL = 'https://snaptapapp-api.herokuapp.com/'
-// axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
-// axios.defaults.withCredentials = True;
+axios.defaults.baseURL = 'https://snaptapapp-api.herokuapp.com/'
+axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
+axios.defaults.withCredentials = true;

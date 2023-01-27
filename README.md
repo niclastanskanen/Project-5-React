@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Snap Tap App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+![Website Preview]()
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Frontend - Deployment](https://snaptapapp.herokuapp.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### API Project Links
 
-### `npm test`
+- [API - Repository](https://github.com/niclastanskanen/project-5-api)
+- [API - Deployment](https://snaptapapp-api.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr>
 
-### `npm run build`
+## Table of Contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [User Experience (UX)](#user-experience-ux)
+  - [User Stories](#user-stories)
+  - [Agile Methodology](#agile-methodology)
+  - [Design](#design)
+    - [Wireframes](#wireframes)
+    - [Color Scheme](#color-scheme)
+    - [Typography](#typography)
+    - [Images and Iconography](#images-and-iconography)
+- [Features](#features)
+  - [Home Page](#home-page)
+  - [Navigation](#navigation)
+  - [Register (Sign up) / Login](#register-sign-up--login)
+  - [Profile](#profile)
+  - [Profile Edit Form](#profile-edit-form)
+  - [Username and Password Edit Forms](#username-and-password-edit-forms)
+  - [Components](#components)
+    - [Components used in this application](#components-used-in-this-application)
+  - [Features Not Implemented](#features-not-implemented)
+  - [Future Features](#future-features)
+- [Testing](#testing)
+  - [Bugs](#bugs)
+    - [Fixed Bugs](#fixed-bugs)
+    - [Remaining Bugs](#remaining-bugs)
+- [Technologies Used](#technologies-used)
+  - [Languages and Frameworks Used](#languages-and-frameworks-used)
+  - [Node Packages / Dependencies Used](#node-packages--dependencies-used)
+  - [Programs and Tools Used](#programs-and-tools-used)
+- [Deployment](#deployment)
+  - [Forking the GitHub Repository](#forking-the-github-repository)
+  - [Making a Local Clone](#making-a-local-clone)
+  - [Deploying with Heroku](#deploying-with-heroku)
+  - [Linking with the API/backend](#linking-with-the-apibackend)
+- [Credits](#credits)
+  - [Code](#code)
+  - [Media](#media)
+  - [Acknowledgments](#acknowledgments)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
