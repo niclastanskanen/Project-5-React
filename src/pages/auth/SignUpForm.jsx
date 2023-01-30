@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import Logo from '../../assets/logo.png';
+import axios from 'axios';
 
 
 const SignUpForm = () => {
@@ -11,11 +12,25 @@ const SignUpForm = () => {
     });
     const { username, password1, password2 } = signUpData;
 
+    const [errors, setErrors] = useState({});
+
+    const navigate = useNavigate();
+
     const handleChange = (event) => {
         setSignUpData({
             ...signUpData,
             [event.target.name]: event.target.value,
         });
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            await axios.post('/dj-rest-auth/registration/', signUpData);
+            navigate.push('/home');
+        } catch (err) {
+            setErrors(err.response?.data)
+        }
     };
 
     return (
@@ -25,7 +40,7 @@ const SignUpForm = () => {
                     <img class="mx-auto h-12 w-auto" src={Logo} alt="Snap Tap App" />
                     <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Create An Account</h2>
                 </div>
-                <form class="mt-8 space-y-6" action="#" method="POST">
+                <form class="mt-8 space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
                     <input type="hidden" name="remember" value="true" />
                     <div class="-space-y-px rounded-md shadow-sm">
                         <div>
