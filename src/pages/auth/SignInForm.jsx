@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import Logo from '../../assets/logo.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignInForm() {
+    const [signInData, setSignInData] = useState({
+        username: "",
+        password: "",
+    });
+    const { username, password } = signInData;
+
+    const [errors, setErrors] = useState({});
+
+    const navigate = useNavigate();
+    
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const { data } = await axios.post("/dj-rest-auth/login", signInData);
+            navigate('/home');
+        } catch (err) {
+            setErrors(err.response?.data);
+        }
+    };
+
+    const handleChange = (event) => {
+        setSignInData({
+            ...signInData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
     return (
         <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div class="w-full max-w-md space-y-8">
@@ -9,18 +39,19 @@ function SignInForm() {
                     <img class="mx-auto h-12 w-auto" src={Logo} alt="Snap Tap App" />
                     <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
                 </div>
-                <form class="mt-8 space-y-6" action="#" method="POST">
+                <form class="mt-8 space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
                     <input type="hidden" name="remember" value="true" />
                     <div class="-space-y-px rounded-md shadow-sm">
                         <div>
-                            <label for="email-address" class="sr-only">Email address</label>
+                            <label for="username" class="sr-only">Username</label>
                             <input
-                                id="email-address"
-                                name="email"
-                                type="email"
-                                autocomplete="email"
+                                id="username"
+                                name="username"
+                                type="text"
                                 required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                placeholder="Email address"
+                                placeholder="Username"
+                                value={username}
+                                onChange={handleChange}
                             />
                         </div>
                         <div>
@@ -29,9 +60,10 @@ function SignInForm() {
                                 id="password"
                                 name="password"
                                 type="password"
-                                autocomplete="current-password"
                                 required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                 placeholder="Password"
+                                value={password}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
@@ -46,7 +78,12 @@ function SignInForm() {
                             <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
                         </div>
                         <div class="text-sm">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>
+                        <Link
+                                className='font-medium text-indigo-600 hover:text-indigo-500'
+                                to='/signup'
+                            >
+                                <p>Create An Account</p>
+                            </Link>
                         </div>
                     </div>
                     <div>

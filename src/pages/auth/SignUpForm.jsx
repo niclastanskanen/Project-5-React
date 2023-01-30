@@ -27,7 +27,7 @@ const SignUpForm = () => {
         event.preventDefault();
         try {
             await axios.post('/dj-rest-auth/registration/', signUpData);
-            navigate.push('/home');
+            navigate('/home');
         } catch (err) {
             setErrors(err.response?.data)
         }
@@ -44,7 +44,7 @@ const SignUpForm = () => {
                     <input type="hidden" name="remember" value="true" />
                     <div class="-space-y-px rounded-md shadow-sm">
                         <div>
-                            <label for="email-address" class="sr-only">Username</label>
+                            <label for="username" class="sr-only">Username</label>
                             <input
                                 id="username"
                                 name="username"
