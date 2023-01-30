@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
 
-function SignUpForm() {
+const SignUpForm = () => {
+    const [signUpData, setSignUpData] = useState({
+        username: "",
+        password1: "",
+        password2: "",
+    });
+    const { username, password1, password2 } = signUpData;
+
+    const handleChange = (event) => {
+        setSignUpData({
+            ...signUpData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
     return (
         <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div class="w-full max-w-md space-y-8">
@@ -15,36 +29,39 @@ function SignUpForm() {
                     <input type="hidden" name="remember" value="true" />
                     <div class="-space-y-px rounded-md shadow-sm">
                         <div>
-                            <label for="email-address" class="sr-only">Email address</label>
+                            <label for="email-address" class="sr-only">Username</label>
                             <input
-                                id="email-address"
-                                name="email"
-                                type="email"
-                                autocomplete="email"
+                                id="username"
+                                name="username"
+                                type="text"
                                 required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                placeholder="Email address"
+                                placeholder="Username"
+                                value={username}
+                                onChange={handleChange}
                             />
                         </div>
                         <div>
                             <label for="password" class="sr-only">Password</label>
                             <input
-                                id="password"
-                                name="password"
+                                id="password1"
+                                name="password1"
                                 type="password"
-                                autocomplete="current-password"
                                 required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                 placeholder="Password"
+                                value={password1}
+                                onChange={handleChange}
                             />
                         </div>
                         <div>
                             <label for="password" class="sr-only">Confirm Password</label>
                             <input
-                                id="password"
-                                name="password"
+                                id="password2"
+                                name="password2"
                                 type="password"
-                                autocomplete="current-password"
                                 required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                 placeholder="Confirm Password"
+                                value={password2}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
