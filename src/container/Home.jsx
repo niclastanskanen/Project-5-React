@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { Link, Route, Routes } from 'react-router-dom';
+import { AiOutlineMenu, AiOutlineCloseCircle } from 'react-icons/ai';
 
-import { Sidebar, Profile } from '../components';
 import Feed from './Feed';
 import logo from '../assets/logo.png'
-import { Link, Route, Routes } from 'react-router-dom';
+
 import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { Sidebar, Profile } from '../components';
 import Avatar from '../components/Avatar';
 
 const Home = () => {
