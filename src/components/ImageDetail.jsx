@@ -1,8 +1,14 @@
 import React from 'react'
 
-const ImageDetail = () => {
+const ImageDetail = (props) => {
+  const {
+    image,
+  } = props;
+  
   return (
-    <div>ImageDetail</div>
+    <div>
+      <img className='rounded-lg w-full' alt='user' src={image} />
+    </div>
   )
 }
 
