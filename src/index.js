@@ -16,5 +16,4 @@ root.render(
             </CurrentUserProvider>
         </Router>
     </React.StrictMode>,
-    document.getElementById('root')
 );
