@@ -4,9 +4,10 @@ import { IoMdAddCircleOutline } from 'react-icons/io';
 import { AiOutlineSearch } from 'react-icons/ai'
 import { useCurrentUser } from '../contexts/CurrentUserContext';
 
-const Navbar = ({ searchTerm, setSearchTerm }) => {
+const Navbar = ({ searchTerm, setSearchTerm}) => {
   const navigate = useNavigate();
   const currentUser = useCurrentUser();
+
 
 
   return (
