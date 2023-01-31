@@ -3,6 +3,9 @@ import { NavLink, Link } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineArrowRight } from 'react-icons/ai';
 
 import logo from '../assets/logo.png';
+import { useCurrentUser } from '../contexts/CurrentUserContext';
+import Avatar from './Avatar';
+import Profile from '../pages/profiles/Profile';
 
 const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
 const isActiveStyle = 'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize';
@@ -19,6 +22,8 @@ const categories = [
 ]
 
 const Sidebar = ({ closeToggle }) => {
+  const currentUser = useCurrentUser();
+
   const handleCloseSidebar = () => {
     if(closeToggle) closeToggle(false);
   }
@@ -56,8 +61,17 @@ const Sidebar = ({ closeToggle }) => {
             ))}
           </div>
         </div>
+        <Link
+          className='flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3'
+          to={`/profiles/${currentUser?.profile_id}`}
+          onClick={handleCloseSidebar}
+        >
+        <img src={currentUser?.profile_image} className='w-10 h-10 rounded-full' alt='User Profile' />
+        <p>{Profile.id}</p>
+          <AiOutlineArrowRight />
+        </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
