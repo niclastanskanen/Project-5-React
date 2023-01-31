@@ -14,7 +14,6 @@ function SignInForm() {
 
     const navigate = useNavigate();
     
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
