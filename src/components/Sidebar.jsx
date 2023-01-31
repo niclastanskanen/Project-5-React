@@ -4,7 +4,6 @@ import { AiOutlineHome, AiOutlineArrowRight } from 'react-icons/ai';
 
 import logo from '../assets/logo.png';
 import { useCurrentUser } from '../contexts/CurrentUserContext';
-import Avatar from './Avatar';
 import Profile from '../pages/profiles/Profile';
 
 const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
