@@ -19,7 +19,7 @@ const Home = () => {
         <Sidebar />
       </div>
       <div className='flex md:hidden flex-row'>
-        <AiOutlineMenu fontSize={40} className='cursor-pointer' onClick={() => setToggleSidebar(false)} />
+        <AiOutlineMenu fontSize={40} className='cursor-pointer' onClick={() => setToggleSidebar(true)} />
         <Link to='/'>
           <img src={logo} alt='logo' className='w-40' />
         </Link>
@@ -27,6 +27,14 @@ const Home = () => {
         <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
         </Link>
       </div>
+      {toggleSidebar && (
+        <div className='fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in'>
+          <div className='absolute w-full flex justify-end items-center p-2'>
+            <AiOutlineCloseCircle fontSize={30} className='cursor-pointer' onClick={() => setToggleSidebar(false)} />
+          </div>
+          <Sidebar closeToggle={setToggleSidebar} />
+        </div>
+      )}
     </div>
   )
 }
