@@ -1,18 +1,29 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
-import { AiOutlineMenu, AiOutlineCloseCircle } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineCloseCircle, AiOutlineLogout } from 'react-icons/ai';
 
 import Feed from './Feed';
 import logo from '../assets/logo.png'
 
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import { Sidebar, Profile } from '../components';
 import Avatar from '../components/Avatar';
+import axios from 'axios';
 
 const Home = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const scrollRef = useRef(null);
+
+  const handleSignOut = async () => {
+    try {
+      await axios.post('dj-rest-auth/logout/');
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err)
+    }
+  };
 
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0)
@@ -32,6 +43,7 @@ const Home = () => {
           <Link to={`/profiles/${currentUser?.profile_id}`}>
             <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
           </Link>
+          <AiOutlineLogout fontSize={40} className='cursor-pointer' onClick={handleSignOut} />
         </div>
         {toggleSidebar && (
           <div className='fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in'>
