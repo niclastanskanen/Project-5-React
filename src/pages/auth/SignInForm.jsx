@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Logo from '../../assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 
 function SignInForm() {
+    const setCurrentUser = useSetCurrentUser();
+
     const [signInData, setSignInData] = useState({
         username: "",
         password: "",
