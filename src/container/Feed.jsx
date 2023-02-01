@@ -14,7 +14,7 @@ const Feed = () => {
           <Routes>
             <Route path='/' element={<Image />} />
             <Route path='/image' element={<Image />} />
-            <Route path='/image/:id' element={<ImageDetail />} />
+            <Route path='/image/:imageId' element={<ImageDetail />} />
             <Route path='/upload' element={<UploadImage />} />
             <Route path='/search' element={<Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />} />
           </Routes>

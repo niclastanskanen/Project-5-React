@@ -5,7 +5,7 @@ import { axiosReq } from '../api/axiosDefaults';
 
 import Spinner from './Spinner';
 
-const UploadImage = () => {
+function UploadImage () {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -54,7 +54,6 @@ const UploadImage = () => {
       }
     }
   };
-
 
 
   return (
