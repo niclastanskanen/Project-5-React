@@ -12,6 +12,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 function Profile() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
+  const [post, setPost] = useState({ results: [] });
 
   const currentUser = useCurrentUser();
   const { id } = useParams();
@@ -21,6 +22,7 @@ function Profile() {
 
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,6 +45,7 @@ function Profile() {
     fetchData();
   }, [id, setProfileData]);
 
+
   const mainProfile = (
     <>
       {profile?.is_owner}
@@ -51,33 +54,33 @@ function Profile() {
           <div className='relative flex flex-col mb-7'>
             <div className='flex flex-col justify-center items-center'>
               <img src={profile?.image} />
-              <h3>{profile?.owner}</h3>
-                <div><p>{profile?.posts_count}</p></div>
-                <div>Posts</div>
-                <div><p>{profile?.followers_count}</p></div>
-                <div>Followers</div>
-                <div><p>{profile?.following_count}</p></div>
-                <div>Following</div>
+              <h2>{profile?.owner}</h2>
+              <div><p>{profile?.posts_count}</p></div>
+              <div>Posts</div>
+              <div><p>{profile?.followers_count}</p></div>
+              <div>Followers</div>
+              <div><p>{profile?.following_count}</p></div>
+              <div>Following</div>
             </div>
-          </div>
-          <div lg={3} className="text-lg-right">
-            {currentUser &&
-              !is_owner &&
-              (profile?.following_id ? (
-                <button
-                  type="button"
-                  className="bg-red-400 text-white font-bold p-2 rounded-full w-28 outline-none"
-                >
-                  unfollow
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className="bg-red-400 text-white font-bold p-2 rounded-full w-28 outline-none"
-                >
-                  follow
-                </button>
-              ))}
+            <div>
+              {currentUser &&
+                !is_owner &&
+                (profile?.following_id ? (
+                  <button
+                    type="button"
+                    className="bg-red-400 text-white font-bold p-2 rounded-full w-28 outline-none"
+                  >
+                    unfollow
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="bg-red-400 text-white font-bold p-2 rounded-full w-28 outline-none"
+                  >
+                    follow
+                  </button>
+                ))}
+            </div>
           </div>
           {profile?.content && <col className="p-3">{profile.content}</col>}
         </div>
@@ -87,14 +90,10 @@ function Profile() {
 
   const mainProfilePosts = (
     <>
-      <hr />
       <p className="text-center">{profile?.owner}'s posts</p>
-      <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
-          children={profilePosts.results.map((post) => (
-            <Post key={post.id} {...post} setPosts={setProfilePosts} />
-          ))}
+
           dataLength={profilePosts.results.length}
           loader={<Spinner />}
           hasMore={!!profilePosts.next}
