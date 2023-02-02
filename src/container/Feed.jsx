@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { Navbar, Image, ImageDetail, UploadImage, Search } from '../components';
 
+
 const Feed = () => {
   const [searchTerm, setSearchTerm] = useState('')
   return (

@@ -11,7 +11,7 @@ const ImageDetail = () => {
   
   return (
     <div>
-      <img className='rounded-lg w-full' alt='user' src={image} />
+      hello
     </div>
   )
 }
