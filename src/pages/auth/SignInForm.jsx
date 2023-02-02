@@ -3,7 +3,7 @@ import axios from 'axios';
 import Logo from '../../assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
-// import { setTokenTimestamp } from '../../utils';
+import { setTokenTimestamp } from '../../utils/utils';
 
 function SignInForm() {
     const setCurrentUser = useSetCurrentUser();
@@ -23,7 +23,7 @@ function SignInForm() {
         try {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
             setCurrentUser(data.user);
-            // setTokenTimestamp(data);
+            setTokenTimestamp(data);
             navigate('/home');
         } catch (err) {
             setErrors(err.response?.data);
