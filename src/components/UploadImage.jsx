@@ -83,8 +83,8 @@ function UploadImage() {
                         />
                     </form>
                     <div className="flex justify-end items-end mt-5">
-                    <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full w-28 outline-none' type="submit">
-                        create
+                    <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none' type="submit">
+                        Upload Photo
                     </button>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ function UploadImage() {
                                 </>
                             ) : (
                                 <p
-                                    className="d-flex justify-content-center"
+                                    className="font-bold text-2xl"
                                     htmlFor="image-upload"
                                 >
                                     <AiOutlineUpload />

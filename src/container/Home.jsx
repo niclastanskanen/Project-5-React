@@ -21,7 +21,7 @@ const Home = () => {
       await axios.post('dj-rest-auth/logout/');
       setCurrentUser(null);
     } catch (err) {
-      console.log(err)
+      // console.log(err)
     }
   };
 
@@ -43,7 +43,9 @@ const Home = () => {
           <Link to={`/profiles/${currentUser?.profile_id}`}>
             <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
           </Link>
-          <AiOutlineLogout fontSize={40} className='cursor-pointer' onClick={handleSignOut} />
+          <Link>
+          <AiOutlineLogout fontSize={40} className='cursor-pointer' to='/login' onClick={handleSignOut} />
+          </Link>
         </div>
         {toggleSidebar && (
           <div className='fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in'>
