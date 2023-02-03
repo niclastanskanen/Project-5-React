@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineCloseCircle, AiOutlineLogout } from 'react-icons/ai';
 
 import Feed from './Feed';
@@ -15,11 +15,13 @@ const Home = () => {
   const setCurrentUser = useSetCurrentUser();
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const scrollRef = useRef(null);
-
+  const navigate = useNavigate();
+  
   const handleSignOut = async () => {
     try {
       await axios.post('dj-rest-auth/logout/');
       setCurrentUser(null);
+      navigate('/login');
     } catch (err) {
       // console.log(err)
     }
