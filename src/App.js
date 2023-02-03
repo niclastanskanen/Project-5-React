@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './api/axiosDefaults';
 
@@ -8,8 +8,6 @@ import SignInForm from './pages/auth/SignInForm';
 import SignUpForm from './pages/auth/SignUpForm';
 
 const App = () => {
-  const navigate = useNavigate();
-
 
   return (
     <Routes>

@@ -7,6 +7,9 @@ import Spinner from '../../components/Spinner';
 import { fetchMoreData } from '../../utils/utils';
 import { Navbar } from '../../components';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import ProfilePost from './ProfilePost';
+import Masonry from 'react-masonry-css';
+import MasonryLayout from '../../components/MasonryLayout';
 
 
 function Profile() {
@@ -22,7 +25,6 @@ function Profile() {
 
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -90,10 +92,12 @@ function Profile() {
 
   const mainProfilePosts = (
     <>
-      <p className="text-center">{profile?.owner}'s posts</p>
+      <p className="text-center">{profile?.owner}'s images</p>
       {profilePosts.results.length ? (
         <InfiniteScroll
-
+          children={profilePosts.results.map((post) => (
+          <ProfilePost key={post.id} {...post} setPosts={setProfilePosts} className='w-max' />
+          ))}
           dataLength={profilePosts.results.length}
           loader={<Spinner />}
           hasMore={!!profilePosts.next}
