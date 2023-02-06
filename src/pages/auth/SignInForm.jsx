@@ -14,10 +14,8 @@ function SignInForm() {
     });
     const { username, password } = signInData;
 
-    const [errors, setErrors] = useState({});
-
     const navigate = useNavigate();
-    
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -27,8 +25,12 @@ function SignInForm() {
             navigate('/home');
         } catch (err) {
             setErrors(err.response?.data);
+            setLoginFailed(true);
         }
     };
+
+    const [loginFailed, setLoginFailed] = useState(false);
+    const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
         setSignInData({
@@ -37,6 +39,8 @@ function SignInForm() {
         });
     };
 
+
+
     return (
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
@@ -44,6 +48,12 @@ function SignInForm() {
                     <img className="mx-auto h-12 w-auto" src={Logo} alt="Snap Tap App" />
                     <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
                 </div>
+                {loginFailed && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+          <strong className='font-bold'> Login failed!</strong>
+          <span className='block sm:inline'> Please try again.</span>
+        </div>
+      )}
                 <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
                     <input type="hidden" name="remember" value="true" />
                     <div className="-space-y-px rounded-md shadow-sm">
@@ -83,7 +93,7 @@ function SignInForm() {
                             <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">Remember me</label>
                         </div>
                         <div className="text-sm">
-                        <Link
+                            <Link
                                 className='font-medium text-indigo-600 hover:text-indigo-500'
                                 to='/signup'
                             >
