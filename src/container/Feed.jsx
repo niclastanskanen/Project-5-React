@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { Navbar, Image, ImageDetail, UploadImage, Search } from '../components';
+import { Navbar, ImageFeed, ImageDetail, UploadImage, Search } from '../components';
+import ImageEdit from '../pages/images/ImageEdit';
 
 
 const Feed = () => {
@@ -13,9 +14,10 @@ const Feed = () => {
         </div>
         <div className='h-full'>
           <Routes>
-            <Route path='/' element={<Image />} />
-            <Route path='/image' element={<Image />} />
+            <Route path='/' element={<ImageFeed />} />
+            <Route path='/image' element={<ImageFeed />} />
             <Route path='/image/:imageId' element={<ImageDetail />} />
+            <Route path='/image/:imageId/edit' element={<ImageEdit />} />
             <Route path='/upload' element={<UploadImage />} />
             <Route path='/search' element={<Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />} />
           </Routes>

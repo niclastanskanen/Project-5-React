@@ -28,7 +28,7 @@ const ProfilePost = (props) => {
   const navigate = useNavigate();
 
   const handleEdit = () => {
-    navigate(`/posts/${id}/edit`);
+    navigate(`/image/${id}/edit`);
   };
 
   const handleDelete = async () => {
@@ -52,7 +52,9 @@ const ProfilePost = (props) => {
   return (
 
     <div class="max-w rounded overflow-hidden shadow-lg">
+      <Link to={`/image/${id}`}>
       <img class="w-max" src={image} alt={title} />
+      </Link>
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">{title}</div>
         <p class="text-gray-700 text-base">

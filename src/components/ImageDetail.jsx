@@ -1,39 +1,97 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import MasonryLayout from './MasonryLayout';
 import { AiOutlineDownload } from 'react-icons/ai';
 import Spinner from './Spinner';
 import { axiosReq } from '../api/axiosDefaults';
-import Image from './Image';
+import ImageFeed from './ImageFeed';
 
-function ImageDetail () {
+const ImageDetail = ({ user }) => {
+  const [errors, setErrors] = useState({});
+
+  const [postData, setPostData] = useState({
+    title: "",
+    content: "",
+    image: "",
+  });
+  const { title, content, image } = postData;
+
+  const imageInput = useRef(null);
+  const navigate = useNavigate
   const { id } = useParams();
-  const [post, setPost] = useState({ results: [] });
 
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: post }] = await Promise.all([
-          axiosReq.get(`/posts/${id}`),
-        ]);
-        setPost({ results: [post] });
-        console.log(post);
+        const { data } = await axiosReq.get(`/posts/${id}`);
+        const { title, content, image, is_owner } = data;
+
+        is_owner ? setPostData({ title, content, image }) : navigate("/");
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
     handleMount();
-  }, [id]);
-  
+  }, [navigate, id]);
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("content", content);
+
+    if (imageInput?.current?.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
+
+    try {
+      await axiosReq.put(`/posts/${id}`, formData);
+      navigate(`/posts/${id}`);
+    } catch (err) {
+      // console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  };
+
+
   
   return (
     <div>
-      <img {...post.results[0]} setPosts={setPost} postPage />
+      <h1>ImageDetail</h1>
+      <form
+        type='text'
+        name='title'
+        value={title}
+        onChange={handleChange}
+      >
+
+      </form>
     </div>
-  )
-}
+
+  );
+};
 
 export default ImageDetail
