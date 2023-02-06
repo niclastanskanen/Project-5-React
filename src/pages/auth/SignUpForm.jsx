@@ -12,8 +12,6 @@ const SignUpForm = () => {
     });
     const { username, password1, password2 } = signUpData;
 
-    const [errors, setErrors] = useState({});
-
     const navigate = useNavigate();
 
     const handleChange = (event) => {
@@ -29,9 +27,14 @@ const SignUpForm = () => {
             await axios.post('/dj-rest-auth/registration/', signUpData);
             navigate('/home');
         } catch (err) {
-            setErrors(err.response?.data)
+            setErrors(err.response?.data);
+            setSignupFailed(true);
         }
     };
+
+    const [signupFailed, setSignupFailed] = useState(false);
+    const [errors, setErrors] = useState({});
+
 
     return (
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -40,6 +43,12 @@ const SignUpForm = () => {
                     <img className="mx-auto h-12 w-auto" src={Logo} alt="Snap Tap App" />
                     <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Create An Account</h2>
                 </div>
+                {signupFailed && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+                        <strong className='font-bold'>Signup failed!</strong>
+                        <span className='block sm:inline'> Please try again.</span>
+                    </div>
+                )}
                 <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
                     <input type="hidden" name="remember" value="true" />
                     <div className="-space-y-px rounded-md shadow-sm">
