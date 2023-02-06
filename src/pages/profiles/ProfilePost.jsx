@@ -4,6 +4,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';
 import Dropdown from '../../components/Dropdown';
 import { FcLike, FcDislike } from 'react-icons/fc';
+import Avatar from '../../components/Avatar';
 
 
 const ProfilePost = (props) => {
@@ -82,8 +83,11 @@ const ProfilePost = (props) => {
 
   return (
     
-    <div className="max-w rounded overflow-hidden shadow-lg">
-
+    <div className="max-w rounded overflow-hidden shadow-lg pt-5">
+      <Link to={`/profiles/${profile_id}`}>
+        <Avatar src={profile_image} height={55} />
+        {owner}
+      </Link>
       <Link to={`/image/${id}`}>
       <img className="w-max" src={image} alt={title} />
       </Link>
