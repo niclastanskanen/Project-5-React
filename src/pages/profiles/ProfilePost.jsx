@@ -51,27 +51,25 @@ const ProfilePost = (props) => {
 
   return (
 
-
-      <div class="max-w rounded overflow-hidden shadow-lg">
-        <img class="w-max" src={image} alt={title} />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">{title}</div>
-          <p class="text-gray-700 text-base">
-            {content}
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{likes_count} Likes</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{comments_count} Comments</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{updated_at}</span>
-        </div>
-        <div>
-          <Dropdown handleEdit={handleEdit} handleDelete={handleDelete} />
-        </div>
+    <div class="max-w rounded overflow-hidden shadow-lg">
+      <img class="w-max" src={image} alt={title} />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{title}</div>
+        <p class="text-gray-700 text-base">
+          {content}
+        </p>
       </div>
-
-
-
+      <div class="px-6 pt-4 pb-2">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{likes_count} Likes</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{comments_count} Comments</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{updated_at}</span>
+      </div>
+      {is_owner && (
+      <div>
+        <Dropdown handleEdit={handleEdit} handleDelete={handleDelete} />
+      </div>
+      )}
+    </div>
   )
 }
 
