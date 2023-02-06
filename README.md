@@ -24,7 +24,6 @@
     - [Wireframes](#wireframes)
     - [Color Scheme](#color-scheme)
     - [Typography](#typography)
-    - [Images and Iconography](#images-and-iconography)
 - [Features](#features)
   - [Home Page](#home-page)
   - [Navigation](#navigation)
@@ -32,7 +31,8 @@
   - [Profile](#profile)
   - [Profile Edit Form](#profile-edit-form)
   - [Username and Password Edit Forms](#username-and-password-edit-forms)
-  - [Components](#components)
+  - [Upload Images](#Upload-Images)
+  - [Feed / Search](#Feed-/-Search)
 - [Testing](#testing)
   - [Bugs](#bugs)
     - [Fixed Bugs](#fixed-bugs)
@@ -96,31 +96,44 @@ GitHub Kanban was used to track user stories
 
 
 ### Wireframes
+![Wireframe Feed](docs/readme/images/wireframe-feed.png)
+![Wireframe Profile](docs/readme/images/wireframe-profile.png)
 
 ### Color scheme
 ![Color Scheme](docs/readme/images/color-scheme.png)
 
 ### Typography
 
-### Images and iconography
+Google fonts Lato and sans-serif as back up -> https://fonts.google.com/specimen/Lato?query=Lato
+
 
 <hr>
 
 ## Features
 
 ### Home Page
-
+![Home Page](docs/readme/images/features-home-page.png)
 ### Navigation
-
+![Navigation](docs/readme/images/features-navigation.png)
 ### Register Sign up Login
-
+![Signup](docs/readme/images/features-create-account.png)
+![Sigin](docs/readme/images/features-signin.png)
 ### Profile
-
+![Profile](docs/readme/images/features-profile.png)
 ### Profile Edit Form
 
 ### Username and Password Edit Form
 
-### Components
+### Upload Images
+![Upload image](docs/readme/images/features-upload-image.png)
+
+### Feed / Search
+![Feed Search](docs/readme/images/features-search.png)
+
+### Edit Image
+![Edit Image](docs/readme/images/features-edit-image.png)
+![Edit Image](docs/readme/images/features-edit-image2.png)
+
 
 <hr>
 
