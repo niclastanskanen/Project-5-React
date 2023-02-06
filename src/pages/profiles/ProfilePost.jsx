@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';
 import Dropdown from '../../components/Dropdown';
+import { FcLike, FcDislike } from 'react-icons/fc';
 
 
 const ProfilePost = (props) => {
@@ -59,6 +60,10 @@ const ProfilePost = (props) => {
         <p className="text-gray-700 text-base">
           {content}
         </p>
+        </div>
+        <div className='flex justify-center items-center gap-10'>
+        <FcLike fontSize={30} />
+        <FcDislike fontSize={30} />
       </div>
       <div className="px-6 pt-4 pb-2">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{likes_count} Likes</span>

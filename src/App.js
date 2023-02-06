@@ -10,12 +10,12 @@ import SignUpForm from './pages/auth/SignUpForm';
 import { Login } from './components';
 
 const App = () => {
-  const navigate = useNavigate();
-  const currentUser = useCurrentUser();
+  // const navigate = useNavigate();
+  // const currentUser = useCurrentUser();
 
-  useEffect(() => {
-    if (!currentUser) navigate('/login');
-  }, [currentUser, navigate]);
+  // useEffect(() => {
+  //   if (!currentUser) navigate('/login');
+  // }, [currentUser, navigate]);
 
   return (
     <Routes>
