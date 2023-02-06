@@ -47,8 +47,6 @@
   - [Deploying with Heroku](#deploying-with-heroku)
   - [Linking with the API/backend](#linking-with-the-apibackend)
 - [Credits](#credits)
-  - [Code](#code)
-  - [Media](#media)
   - [Acknowledgments](#acknowledgments)
 
 <hr>
@@ -176,10 +174,24 @@ Google fonts Lato and sans-serif as back up -> https://fonts.google.com/specimen
 ## Technologies Used
 
 ### Languages and Frameworks Used
+- HTML
+- JavaScript
+- React
 
 ### Node Packages / Dependencies Used
 
+- [TailwindCSS](https://tailwindcss.com/)
+- [React Icons](https://react-icons.github.io/react-icons)
+- [React Loader Spinner](https://www.npmjs.com/package/react-loader-spinner)
+- [React Masonry CSS](https://www.npmjs.com/package/react-masonry-css)
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+- [Axios](https://www.npmjs.com/package/axios)
+- [jwt decoode](https://www.npmjs.com/package/jwt-decode)
+
 ### Programs and Tools Used
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [GitPod](https://www.gitpod.io/)
 
 <hr>
 
@@ -258,9 +270,22 @@ You should then update the `CLIENT_ORIGIN` config variable in your deployed vers
 
 ## Credits
 
-### Code
+### Images & Icons
+- [Canva](https://www.canva.com/)
+- [Video Videvo](https://www.videvo.net/video/close-up-of-the-beautiful-young-woman-taking-a-picture-with-a-photocamera-and-then-smiling-in-the-historical-town-in-sunlight-1/1117971/)
+- [User background photo](https://wallpaperscraft.com/all/1600x900)
 
-### Media
+### Tools
+- [Am I Responsive](http://ami.responsivedesign.is/)
+- [Google Fonts](https://fonts.google.com/)
+- [Color Scheme](https://coolors.co/)
+- [Image Compressor](https://business-tools.clickfunnels.com/business-tools/compress-image)
+- [Video Compressor](https://www.freeconvert.com/video-compressor/download)
+
+### Coding Guide
+- [JSX React](https://reactjs.org/docs/introducing-jsx.html)
+- [Code Institute Moments](https://github.com/Code-Institute-Solutions/moments/)
+
 
 ### Acknowledgments
 
