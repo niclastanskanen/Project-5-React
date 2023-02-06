@@ -88,19 +88,36 @@
 
 MoSCoW priority was applied to all user stories.
 
-GitHub Kanban was used to track user stories
+<details><summary>User Stories</summary>
 
+![user-stories-close](docs/readme/images/moscow-user-stories.png)
+
+</details>
+<br>
+GitHub Kanban was used to track user stories
+<details><summary>Kanban</summary>
+
+![kanban](docs/readme/images/kanban-user-stories.png)
+</details>
 <hr>
 
 ## Design
 
 
 ### Wireframes
+<details><summary>Click to open</summary>
+
 ![Wireframe Feed](docs/readme/images/wireframe-feed.png)
 ![Wireframe Profile](docs/readme/images/wireframe-profile.png)
+</details>
+<br>
 
 ### Color scheme
+<details><summary>Click to open</summary>
+
 ![Color Scheme](docs/readme/images/color-scheme.png)
+</details>
+<br>
 
 ### Typography
 
