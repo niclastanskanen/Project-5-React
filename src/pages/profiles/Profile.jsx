@@ -8,6 +8,7 @@ import { fetchMoreData } from '../../utils/utils';
 import { Navbar } from '../../components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ProfilePost from './ProfilePost';
+import Dropdown from '../../components/Dropdown';
 
 
 function Profile() {

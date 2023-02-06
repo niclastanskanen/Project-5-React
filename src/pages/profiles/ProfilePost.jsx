@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';
 import Masonry from 'react-masonry-css';
+import Dropdown from '../../components/Dropdown';
 
 
 const ProfilePost = (props) => {
@@ -25,11 +26,15 @@ const ProfilePost = (props) => {
       const currentUser = useCurrentUser();
       const is_owner = currentUser?.username === owner;
       const navigate = useNavigate();
+
+      const handleEdit = () => {
+        navigate(`/posts/${id}/edit`);
+      };
       
       const handleDelete = async () => {
         try {
-          await axiosRes.delete(`/posts/${id}/`);
-          history.goBack();
+          await axiosRes.delete(`/posts/${id}`);
+          navigate(-1);
         } catch (err) {
           // console.log(err);
         }
@@ -48,14 +53,18 @@ const ProfilePost = (props) => {
     <div className='px-2'>
       <Masonry className="flex animate-slide-fwd" breakpointCols={breakpointColumnsObj}>
         
-      {/* <p>{updated_at}</p>
+      <p>{updated_at}</p>
       <p>{title}</p> 
       <p>{content}</p>
-     */}
-    <img src={image} alt={title} className='w-max' />
-    {/* <p>{likes_count}</p>
-    <p>{comments_count}</p> */}
     
+    <img src={image} alt={title} className='w-max' />
+
+    <p>{likes_count}</p>
+    <p>{comments_count}</p>
+    <Dropdown
+      handleEdit={handleEdit}
+      handleDelete={handleDelete}
+    />
     </Masonry>
     </div>
 
