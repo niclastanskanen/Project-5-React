@@ -44,7 +44,7 @@ const SignUpForm = () => {
                     <input type="hidden" name="remember" value="true" />
                     <div className="-space-y-px rounded-md shadow-sm">
                         <div>
-                            <label for="username" className="sr-only">Username</label>
+                            <label htmlFor="username" className="sr-only">Username</label>
                             <input
                                 id="username"
                                 name="username"
@@ -56,7 +56,7 @@ const SignUpForm = () => {
                             />
                         </div>
                         <div>
-                            <label for="password" className="sr-only">Password</label>
+                            <label htmlFor="password" className="sr-only">Password</label>
                             <input
                                 id="password1"
                                 name="password1"
@@ -68,7 +68,7 @@ const SignUpForm = () => {
                             />
                         </div>
                         <div>
-                            <label for="password" className="sr-only">Confirm Password</label>
+                            <label htmlFor="password" className="sr-only">Confirm Password</label>
                             <input
                                 id="password2"
                                 name="password2"
@@ -101,7 +101,7 @@ const SignUpForm = () => {
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                     aria-hidden="true">
-                                    <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                                    <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
                                 </svg>
                             </span>
                             Create An Account

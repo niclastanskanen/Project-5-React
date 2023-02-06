@@ -48,7 +48,7 @@ function SignInForm() {
                     <input type="hidden" name="remember" value="true" />
                     <div className="-space-y-px rounded-md shadow-sm">
                         <div>
-                            <label for="username" className="sr-only">Username</label>
+                            <label htmlFor="username" className="sr-only">Username</label>
                             <input
                                 id="username"
                                 name="username"
@@ -60,7 +60,7 @@ function SignInForm() {
                             />
                         </div>
                         <div>
-                            <label for="password" className="sr-only">Password</label>
+                            <label htmlFor="password" className="sr-only">Password</label>
                             <input
                                 id="password"
                                 name="password"
@@ -80,7 +80,7 @@ function SignInForm() {
                                 type="checkbox"
                                 className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                             />
-                            <label for="remember-me" className="ml-2 block text-sm text-gray-900">Remember me</label>
+                            <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">Remember me</label>
                         </div>
                         <div className="text-sm">
                         <Link
