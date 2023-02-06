@@ -16,7 +16,7 @@ export const Dropdown = ({ handleEdit, handleDelete }) => {
     return (
 
         <div
-            className="flex gap-10 p-2 items-center bg-white rounded-lg shadow-lg mx-3 justify-center items-center"
+            className='flex gap-10 p-2 items-center rounded-lg mx-3 justify-center items-center'
             as={Options}
         >
             <AiOutlineEdit className='cursor-pointer' fontSize={34} onClick={handleEdit}>Edit</AiOutlineEdit>
