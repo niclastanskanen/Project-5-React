@@ -73,14 +73,14 @@ function Profile() {
                 (profile?.following_id ? (
                   <button
                     type="button"
-                    className="bg-red-400 text-white font-bold p-2 rounded-full w-28 outline-none"
+                    className="bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full w-28 outline-none"
                   >
                     unfollow
                   </button>
                 ) : (
                   <button
                     type="button"
-                    className="bg-red-400 text-white font-bold p-2 rounded-full w-28 outline-none"
+                    className="bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full w-28 outline-none"
                   >
                     follow
                   </button>

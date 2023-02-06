@@ -98,7 +98,7 @@ GitHub Kanban was used to track user stories
 ### Wireframes
 
 ### Color scheme
-
+![Color Scheme](docs/readme/images/color-scheme.png)
 
 ### Typography
 
