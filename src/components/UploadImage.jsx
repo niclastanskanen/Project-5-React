@@ -83,9 +83,9 @@ function UploadImage() {
                         />
                     </form>
                     <div className="flex justify-end items-end mt-5">
-                    <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none' type="submit">
-                        Upload Photo
-                    </button>
+                        <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none' type="submit">
+                            Upload Photo
+                        </button>
                     </div>
                 </div>
             </div>
@@ -95,42 +95,43 @@ function UploadImage() {
     return (
         <form onSubmit={handleSubmit}>
 
-                        <form className="text-center">
-                            {image ? (
-                                <>
-                                    <figure>
-                                        <img 
-                                            src={image} 
-                                            className='rounded'
-                                        />
-                                    </figure>
-                                    <div>
-                                        <button
-                                            className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none'
-                                            htmlFor="image-upload"
-                                        >
-                                            Change the image
-                                        </button>
-                                    </div>
-                                </>
-                            ) : (
-                                <p
-                                    className="font-bold text-2xl"
-                                    htmlFor="image-upload"
-                                >
-                                    <AiOutlineUpload />
-                                </p>
-                            )}
-                            <input
-                                type='file'
-                                id="image-upload"
-                                accept="image/*"
-                                onChange={handleChangeImage}
-                                ref={imageInput}
-                            ></input>
-                        </form>
-                  
-                {textFields}
+            <form className="text-center">
+                {image ? (
+                    <>
+                        <figure>
+                            <img
+                                src={image}
+                                className='rounded p-5'
+                            />
+                        </figure>
+                        <div>
+                            <button
+                                className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none'
+                                htmlFor="image-upload"
+                            >
+                                Change the image
+                            </button>
+                        </div>
+                    </>
+                ) : (
+                    <p
+                        className="font-bold text-2xl"
+                        htmlFor="image-upload"
+                    >
+                        <AiOutlineUpload />
+                        </p>
+                )}
+                <input
+                    type='file'
+                    id="image-upload"
+                    accept="image/*"
+                    onChange={handleChangeImage}
+                    ref={imageInput}
+                    className='block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-400 file:text-white hover:file:bg-red-300'
+                ></input>
+            </form>
+
+            {textFields}
 
         </form>
     );
