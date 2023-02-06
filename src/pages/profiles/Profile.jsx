@@ -39,7 +39,7 @@ function Profile() {
         setProfilePosts(profilePosts);
         setHasLoaded(true);
       } catch (err) {
-        // console.log(err);
+
       }
     };
     fetchData();

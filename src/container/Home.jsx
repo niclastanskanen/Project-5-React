@@ -24,7 +24,7 @@ const Home = () => {
       setCurrentUser(null);
       navigate('/login');
     } catch (err) {
-      // console.log(err)
+
     }
   };
 
@@ -47,7 +47,7 @@ const Home = () => {
             <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
           </Link>
           <Link>
-          <AiOutlineLogout fontSize={40} className='cursor-pointer' to='/login' onClick={handleSignOut} />
+          <AiOutlineLogout fontSize={40} className='cursor-pointer' onClick={handleSignOut} />
           </Link>
         </div>
         {toggleSidebar && (

@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react";
 
 import { useNavigate } from "react-router";
 import { axiosReq } from '../api/axiosDefaults';
-import { AiOutlineUpload, AiOutlineDelete } from 'react-icons/ai';
-import Spinner from "./Spinner";
+import { AiOutlineUpload } from 'react-icons/ai';
+
 
 
 function UploadImage() {
@@ -49,7 +49,7 @@ function UploadImage() {
             const { data } = await axiosReq.post("/posts/", formData);
             navigate(`/posts/${data.id}`);
         } catch (err) {
-            // console.log(err);
+
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

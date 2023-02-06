@@ -1,13 +1,25 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IoMdAddCircleOutline } from 'react-icons/io';
-import { AiOutlineSearch } from 'react-icons/ai'
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { AiOutlineSearch, AiOutlineLogout } from 'react-icons/ai'
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
+import axios from 'axios';
+
 
 const Navbar = ({ searchTerm, setSearchTerm}) => {
   const navigate = useNavigate();
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
+  const handleSignOut = async () => {
+    try {
+      await axios.post('dj-rest-auth/logout/');
+      setCurrentUser(null);
+      navigate('/login');
+    } catch (err) {
+
+    }
+  };
 
 
   return (
@@ -30,6 +42,9 @@ const Navbar = ({ searchTerm, setSearchTerm}) => {
         <Link to='/upload' className='bg-red-400 text-white rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
           <IoMdAddCircleOutline fontSize={30}/>
         </Link>
+        <Link className='rounded-lg flex justify-center items-center cursor-pointer'>
+          <AiOutlineLogout fontSize={30} onClick={handleSignOut} />
+          </Link>
       </div>
     </div>
   )

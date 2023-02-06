@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import MasonryLayout from './MasonryLayout';
-import { AiOutlineDownload } from 'react-icons/ai';
-import Spinner from './Spinner';
 import { axiosReq } from '../api/axiosDefaults';
-import ImageFeed from './ImageFeed';
+
 
 const ImageDetail = ({ user }) => {
   const [errors, setErrors] = useState({});
@@ -30,7 +26,7 @@ const ImageDetail = ({ user }) => {
 
         is_owner ? setPostData({ title, content, image }) : navigate("/");
       } catch (err) {
-        // console.log(err);
+
       }
     };
 
@@ -69,7 +65,7 @@ const ImageDetail = ({ user }) => {
       await axiosReq.put(`/posts/${id}`, formData);
       navigate(`/posts/${id}`);
     } catch (err) {
-      // console.log(err);
+
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
