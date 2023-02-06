@@ -132,6 +132,15 @@ GitHub Kanban was used to track user stories
 
 ### Remaining Bugs
 
+![Bug](docs/readme/images/bug-axios-ImageDetail.png)
+![Bug](docs/readme/images/bug-search.png)
+![Bug](docs/readme/images/bug-upload-image.png)
+![Bug](docs/readme/images/bug-sidebar-profile-name.png)
+![Bug](docs/readme/images/bug-sidebar-categories.png)
+![Bug](docs/readme/images/bug-edit-post.png)
+![Bug](docs/readme/images/bug-stay-login.png)
+![Bug](docs/readme/images/bug-404-not-found.png)
+
 <hr>
 
 ## Technologies Used
