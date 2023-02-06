@@ -10,6 +10,7 @@ import { Sidebar, Profile } from '../components';
 import Avatar from '../components/Avatar';
 import axios from 'axios';
 
+
 const Home = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();

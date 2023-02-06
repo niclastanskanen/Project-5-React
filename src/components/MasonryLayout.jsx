@@ -11,15 +11,10 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-const MasonryLayout = () => {
+const MasonryLayout = () => (
+  <Masonry className="flex animate-slide-fwd" breakpointCols={breakpointColumnsObj}>
+    
+  </Masonry>
+);
 
-
-  return (
-    <Masonry
-      className="flex animate-slide-fwd"
-      breakpointCols={breakpointColumnsObj}>
-    </Masonry>
-  )
-}
-
-export default MasonryLayout
+export default MasonryLayout;

@@ -8,14 +8,11 @@ import { fetchMoreData } from '../../utils/utils';
 import { Navbar } from '../../components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ProfilePost from './ProfilePost';
-import Masonry from 'react-masonry-css';
-import MasonryLayout from '../../components/MasonryLayout';
 
 
 function Profile() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
-  const [post, setPost] = useState({ results: [] });
 
   const currentUser = useCurrentUser();
   const { id } = useParams();
