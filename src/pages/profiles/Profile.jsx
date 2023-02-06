@@ -52,16 +52,21 @@ function Profile() {
         <div className='flex flex-col pb-5'>
           <div className='relative flex flex-col mb-7'>
             <div className='flex flex-col justify-center items-center'>
-              <img src={profile?.image} />
-              <h2>{profile?.owner}</h2>
-              <div><p>{profile?.posts_count}</p></div>
-              <div>Posts</div>
-              <div><p>{profile?.followers_count}</p></div>
-              <div>Followers</div>
-              <div><p>{profile?.following_count}</p></div>
-              <div>Following</div>
+              <img
+                className='w-full h-370 2xl:h-510 shadow-lg object-cover'
+                src='https://images.wallpaperscraft.com/image/single/forest_trees_fog_769304_1600x900.jpg'
+                alt='user-background'
+              />
+              <img
+                className='rounded-full w-20 h-20 -mt-10 shadow-xl object-cover'
+                src={profile?.image}
+              />
+              <h1 className='font-bold text-3xl text-center mt-3'>{profile?.owner}</h1>
+              <p className='mt-3 text-center'>{profile?.posts_count} Posts</p>
+              <p>{profile?.followers_count} Followers</p>
+              <p>{profile?.following_count} Following</p>
             </div>
-            <div>
+            <div className='text-center mb-7 mt-7'>
               {currentUser &&
                 !is_owner &&
                 (profile?.following_id ? (
@@ -89,7 +94,6 @@ function Profile() {
 
   const mainProfilePosts = (
     <>
-      <p className="text-center">{profile?.owner}'s images</p>
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
@@ -110,9 +114,9 @@ function Profile() {
 
   return (
 
-    <div>
+<div>
       <Navbar />
-      <div>
+      
         {hasLoaded ? (
           <>
             {mainProfile}
@@ -122,7 +126,7 @@ function Profile() {
           <Spinner />
         )}
       </div>
-    </div>
+
   )
 }
 
