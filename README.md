@@ -171,7 +171,7 @@ As a user I can view the navbar from every page so that I can easily go by diffe
 |---|---|---|---|
 | 1 | The navigation bar should be visible on every page and inform users of their current location in the site structure. | NavBar is displayed at the top of every page. | :white_check_mark: |
 | 2 | The navigation bar should present a different layout suited to the screen size it is being viewed from. | NavBar is responsive on different viewport. | :white_check_mark: |
-| 3 | All links are accurate and take users to the expected resource. | No broken links and all link to the expected URL. | FAILED |
+| 3 | All links are accurate and take users to the expected resource. | No broken links and all link to the expected URL. | :x: |
 
 
 ### Authentication
@@ -209,7 +209,7 @@ User Stories - As a user I can maintain logged in until I choose to log out so t
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Logged in and waited 10 minutes (to ensure user token has expired) | Restricted page loads as expected. | FAILED |
+| 1 | Logged in and waited 10 minutes (to ensure user token has expired) | Restricted page loads as expected. | :x: |
 
 #### User Story [#10](https://github.com/niclastanskanen/project-5-react/issues/10)
 
@@ -217,8 +217,8 @@ User Stories - As a logged in user I can upload pictures so that I can share my 
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Images must be less that 2MB in size. | Attempted to submit form with images over 2MB and received validation error. | FAILED |
-| 2 | Images must have a height and width less than 4096px. | Attempted to submit form with an image height and width in excess of the limit (4096px) and received validation error. | FAILED |
+| 1 | Images must be less that 2MB in size. | Attempted to submit form with images over 2MB and received validation error. | :x: |
+| 2 | Images must have a height and width less than 4096px. | Attempted to submit form with an image height and width in excess of the limit (4096px) and received validation error. | :x: |
 | 3 | Successful form submission results in a record being created by the API. | Image upload in the database. | :white_check_mark: |
 
 #### User Story [#2](https://github.com/niclastanskanen/project-5-react/issues/2)
@@ -254,8 +254,8 @@ User Stories - As a user I can edit my photos title and description so that I ca
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
 | 1 | A image can be edited. | When logged in as the owner the edit/delete component is visible and the edit form loads when selected. | :white_check_mark: |
-| 2 | Image will be displayed in an editable format with existing information populated. | All current information is populated. | FAILED |
-| 3 | When saved, the information in the image will be updated to reflect any changes made. | Information that has been changed (images, form field information) is updated in the detail view when the form is submitted and is updated in the database by the API | FAILED |
+| 2 | Image will be displayed in an editable format with existing information populated. | All current information is populated. | :x: |
+| 3 | When saved, the information in the image will be updated to reflect any changes made. | Information that has been changed (images, form field information) is updated in the detail view when the form is submitted and is updated in the database by the API | :x: |
 
 
 #### User Story [#20](https://github.com/niclastanskanen/project-5-react/issues/20)
@@ -289,8 +289,8 @@ User Stories - As a user I can view details of photos so that I can learn more a
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Click and visit the image page | Visiting the image detail page displays image, title, content. | FAILED |
-| 2 | Click and visit the image page | Can see likes and comments | FAILED |
+| 1 | Click and visit the image page | Visiting the image detail page displays image, title, content. | :x: |
+| 2 | Click and visit the image page | Can see likes and comments | :x: |
 
 #### User Story [#12](https://github.com/niclastanskanen/project-5-react/issues/12)
 
@@ -324,7 +324,7 @@ User Stories - As a user I can follow and unfollow other people so that I can ch
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Go in to specific profile to see follow/unfollow button. | After pressing follow, user owners profile static should update and profile that was followed. | FAILED |
+| 1 | Go in to specific profile to see follow/unfollow button. | After pressing follow, user owners profile static should update and profile that was followed. | :x: |
 
 #### User Story [#24](https://github.com/niclastanskanen/project-5-react/issues/24)
 
