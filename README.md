@@ -34,6 +34,7 @@
   - [Upload Images](#Upload-Images)
   - [Feed / Search](#Feed-/-Search)
 - [Testing](#testing)
+  - [User Story Testing](#user-story-testing)
   - [Bugs](#bugs)
     - [Fixed Bugs](#fixed-bugs)
     - [Remaining Bugs](#remaining-bugs)
@@ -154,20 +155,252 @@ Google fonts Lato and sans-serif as back up -> https://fonts.google.com/specimen
 
 ## Testing
 
+### User Story Testing
+
+These tests were carried out when a feature was completed and committed during development. They have also been carried out against the deployed version of the site, the results of which are displayed below.
+
+In addition to the test detailed below, all site URL's were tested to ensure they took users to the correct page.
+
+### Navigation
+
+#### User Story [#1](https://github.com/niclastanskanen/project-5-react/issues/1)
+
+As a user I can view the navbar from every page so that I can easily go by different pages.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | The navigation bar should be visible on every page and inform users of their current location in the site structure. | NavBar is displayed at the top of every page. | PASS |
+| 2 | The navigation bar should present a different layout suited to the screen size it is being viewed from. | NavBar is responsive on different viewport. | PASS |
+| 3 | All links are accurate and take users to the expected resource. | No broken links and all link to the expected URL. | FAILED |
+
+
+### Authentication
+
+#### User Story [#4](https://github.com/niclastanskanen/project-5-react/issues/4)
+
+User Stories - As a user I can choose to signup so that I can use all features.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Users can register with a unique username and a password. | Confirmed username must be unique | PASS |
+| 3 | Confirm user account has been created by the API upon successful form submission. | User account confirmed created in the database. | PASS |
+
+#### User Story [#25](https://github.com/niclastanskanen/project-5-react/issues/25)
+
+User Stories - As a user I can login so that I can access my account .
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Users can sign in using the credentials they used to sign up. | Using correct credentials results in the successful login. | PASS |
+| 2 | Login errors are reported to the user. | If an incorrect username or password is entered this is reported to the user on the login form. | PASS |
+
+#### User Story [#26](https://github.com/niclastanskanen/project-5-react/issues/26)
+
+User Stories - as a User I can sign out so I cant access my account.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Users can log out and end their session using a link on the navigation bar. | Logout link sends logout request to API as expected. | PASS |
+| 2 | Local storage is cleared of JWT token expiry information. | Local storage is successfully cleared. | PASS |
+
+#### User Story [#7](https://github.com/niclastanskanen/project-5-react/issues/7)
+
+User Stories - As a user I can maintain logged in until I choose to log out so that I don’t have to log in all-time.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Logged in and waited 10 minutes (to ensure user token has expired) | Restricted page loads as expected. | FAILED |
+
+#### User Story [#10](https://github.com/niclastanskanen/project-5-react/issues/10)
+
+User Stories - As a logged in user I can upload pictures so that I can share my photos with the community.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Images must be less that 2MB in size. | Attempted to submit form with images over 2MB and received validation error. | FAILED |
+| 2 | Images must have a height and width less than 4096px. | Attempted to submit form with an image height and width in excess of the limit (4096px) and received validation error. | FAILED |
+| 3 | Successful form submission results in a record being created by the API. | Image upload in the database. | PASS |
+
+#### User Story [#2](https://github.com/niclastanskanen/project-5-react/issues/2)
+
+User Stories - As a user I can filter photos so that I can find what I want to see faster.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Home page displays all image in a single page view. | All images displayed as expected, ordered by creation. | PASS |
+| 2 | Can search for images both on user and title. | All images displayed as expected, ordered by creation. | PASS |
+
+#### User Story [#3](https://github.com/niclastanskanen/project-5-react/issues/3)
+
+User Stories - As a user I can search for photos and categories so that I can find photos
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Can search for images both on user and title. | All images displayed as expected, ordered by creation. | PASS |
+
+#### User Story [#9](https://github.com/niclastanskanen/project-5-react/issues/9)
+
+User Stories - As a user I can see other user's profiles so that I can see their uploaded photos.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Clicking on a images, will load the users profile page. | Profile detail page loads as expected. | PASS |
+| 2 | Profile detail page displays information. | All information display correct and statistic loads with the correct data. | PASS |
+
+#### User Story [#19](https://github.com/niclastanskanen/project-5-react/issues/19)
+
+User Stories - As a user I can edit my photos title and description so that I can fix typos or update details.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | A image can be edited. | When logged in as the owner the edit/delete component is visible and the edit form loads when selected. | PASS |
+| 2 | Image will be displayed in an editable format with existing information populated. | All current information is populated. | FAILED |
+| 3 | When saved, the information in the image will be updated to reflect any changes made. | Information that has been changed (images, form field information) is updated in the detail view when the form is submitted and is updated in the database by the API | FAILED |
+
+
+#### User Story [#20](https://github.com/niclastanskanen/project-5-react/issues/20)
+
+User Stories - As a user I can delete my photos so that I can choose which photo I want to share.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | A image can be deleted using trashcan icon within the individual image view. | When logged in as the owner the more actions component is visible, the image is deleted from the database by the API, and the user is redirected to the previous page when the menu action is selected. | PASS |
+
+#### User Story [#6](https://github.com/niclastanskanen/project-5-react/issues/6)
+
+User Stories - As a user I can like a picture so that I can give support to the creator
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | A like icon will update when clicked by an authenticated user to show that the image is liked. | When clicked by an authenticated user the like count goes up by 1 or down by 1 if clicked on unlike and the record is created in the database by the API. | PASS |
+
+
+#### User Story [#20](https://github.com/niclastanskanen/project-5-react/issues/20)
+
+User Stories - As a user I can delete my photos so that I can choose which photo I want to share.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | A trash icon will remove when clicked by an authenticated user. | When clicked by an authenticated user the image get deleted and removed and the image is deleted from the database by the API. | PASS |
+
+#### User Story [#11](https://github.com/niclastanskanen/project-5-react/issues/11)
+
+User Stories - As a user I can view details of photos so that I can learn more about it.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Click and visit the image page | Visiting the image detail page displays image, title, content. | FAILED |
+| 2 | Click and visit the image page | Can see likes and comments | FAILED |
+
+#### User Story [#12](https://github.com/niclastanskanen/project-5-react/issues/12)
+
+User Stories - As a user I can view all the photos without going to next page so that I can scroll forever.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Navigate to home to Image feed to see all photos load. | Infinite scroll working and loader loads when loading more image.  | PASS |
+
+
+#### User Story [#13](https://github.com/niclastanskanen/project-5-react/issues/13)
+
+User Stories - As a user I can see date and time for a photo so I can see how old the photo is.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Navigate to image feed and profile to see when image is added | Date shows under all photos | PASS |
+
+
+#### User Story [#17](https://github.com/niclastanskanen/project-5-react/issues/17)
+
+User Stories - As a user I can see statistics about a specific user: Followers and following so I can find other people to look at.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Navigate to profile info | Under profile picture static shows with correct data | PASS |
+
+#### User Story [#18](https://github.com/niclastanskanen/project-5-react/issues/18)
+
+User Stories - As a user I can follow and unfollow other people so that I can choose which photos I want to see.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Go in to specific profile to see follow/unfollow button. | After pressing follow, user owners profile static should update and profile that was followed. | FAILED |
+
+#### User Story [#24](https://github.com/niclastanskanen/project-5-react/issues/24)
+
+User Stories - As a user I can see all my uploaded photos so that I can trace back and see what I have upload.
+
+| Test # | Test | Outcome | Result |
+|---|---|---|---|
+| 1 | Navigate to owner profile and see if uploaded image showing  | Image loading sort by uploaded date | PASS |
+
+
+## Code Validation
+
+### JSX
+
+Warning:
+![Eslint](docs/readme/images/warning-eslint.png)
+
+
+### CSS
+
+The W3C CSS Validator Service was used to validate the project's custom CSS files to ensure there were no syntax errors.
+
+| File | Result |
+|---|---|
+| ![index.css](docs/readme/images/w3c-validator.png) | PASS |
+
+
+### Lighthouse Scores
+
+The site scored well for both desktop and mobile. Performance different a lot using live site vs incognito vs normal vs dev deployment.
+
+- Main Page Desktop
+
+![Lighthouse Scores Desktop](docs/readme/images/lighthouse-desktop.png)
+
+- Main Page Mobile
+
+![Lighthouse Scores Mobile](docs/readme/images/lighthouse-mobile.png)
+
+### Devices used for manual testing
+
+Site was tested using the following desktop and mobile browsers:
+
+- Chrome (v.103), Firefox (v.103), Firefox Developer Edition (v.104), Safari (iOS 16 on Iphone 14 ProMax, iPhone 7 and iPad 6th Gen).
+
 ### Bugs
 
 ### Fixed Bugs
 
 ### Remaining Bugs
 
+### Image detail don't render correct
 ![Bug](docs/readme/images/bug-axios-ImageDetail.png)
+
+### My main search in top dosn't work with search function but when I put in another one outside navbar then its working.
 ![Bug](docs/readme/images/bug-search.png)
+
+### Choose file dosn't hid when preview image to upload.
 ![Bug](docs/readme/images/bug-upload-image.png)
+
+### Sidebar profile name, don't render, its working with profile ID?
 ![Bug](docs/readme/images/bug-sidebar-profile-name.png)
+
+### Sidebar categories, don't render and I took that away and using placeholder instead.
 ![Bug](docs/readme/images/bug-sidebar-categories.png)
+
+### Edit image/post dosn't render previews info.
 ![Bug](docs/readme/images/bug-edit-post.png)
+
+### When you are not loggedin, you should not have access to homepage. When if currentuser are used, it got stack in "login loop" and it broke. 
 ![Bug](docs/readme/images/bug-stay-login.png)
+
+### Page 404 don't render or render all time.
 ![Bug](docs/readme/images/bug-404-not-found.png)
+
+### jwttooken didn't worked in dev but seems to be working on live site.
 ![Bug](docs/readme/images/bug-jwttooken.png)
 
 <hr>

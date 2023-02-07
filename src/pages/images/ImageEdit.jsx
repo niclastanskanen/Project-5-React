@@ -36,15 +36,6 @@ function ImageEdit() {
         });
     };
 
-    const handleChangeImage = (event) => {
-        if (event.target.files.length) {
-            URL.revokeObjectURL(image);
-            setPostData({
-                ...postData,
-                image: URL.createObjectURL(event.target.files[0]),
-            });
-        }
-    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
