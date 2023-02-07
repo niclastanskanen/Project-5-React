@@ -26,7 +26,7 @@ function ImageDetail() {
         setPost({ results: [post] });
         setComments(comments);
       } catch (err) {
-        console.log(err);
+
       }
     };
 

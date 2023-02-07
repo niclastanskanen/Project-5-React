@@ -61,6 +61,7 @@ function Profile() {
               <img
                 className='rounded-full w-20 h-20 -mt-10 shadow-xl object-cover'
                 src={profile?.image}
+                alt='profile'
               />
               <h1 className='font-bold text-3xl text-center mt-3'>{profile?.owner}</h1>
               <p className='mt-3 text-center'>{profile?.posts_count} Posts</p>

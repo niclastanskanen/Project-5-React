@@ -168,6 +168,7 @@ Google fonts Lato and sans-serif as back up -> https://fonts.google.com/specimen
 ![Bug](docs/readme/images/bug-edit-post.png)
 ![Bug](docs/readme/images/bug-stay-login.png)
 ![Bug](docs/readme/images/bug-404-not-found.png)
+![Bug](docs/readme/images/bug-jwttooken.png)
 
 <hr>
 

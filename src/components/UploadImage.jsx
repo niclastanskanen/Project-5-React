@@ -102,6 +102,7 @@ function UploadImage() {
                             <img
                                 src={image}
                                 className='rounded p-5'
+                                alt="user"
                             />
                         </figure>
                         <div>

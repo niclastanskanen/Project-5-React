@@ -40,14 +40,6 @@ const ProfilePost = (props) => {
     }
   };
 
-  const breakpointColumnsObj = {
-    default: 4,
-    3000: 6,
-    2000: 5,
-    1200: 3,
-    1000: 2,
-    500: 1,
-  };
 
   const handleLike = async () => {
     try {
@@ -61,7 +53,7 @@ const ProfilePost = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+
     }
   };
 
@@ -77,7 +69,7 @@ const ProfilePost = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+
     }
   };
 

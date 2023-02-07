@@ -4,6 +4,7 @@ import { IoMdAddCircleOutline } from 'react-icons/io';
 import { AiOutlineSearch, AiOutlineLogout } from 'react-icons/ai'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import axios from 'axios';
+import { removeTokenTimestamp } from '../utils/utils';
 
 
 const Navbar = ({ searchTerm, setSearchTerm}) => {
@@ -15,6 +16,7 @@ const Navbar = ({ searchTerm, setSearchTerm}) => {
     try {
       await axios.post('dj-rest-auth/logout/');
       setCurrentUser(null);
+      removeTokenTimestamp();
       navigate('/login');
     } catch (err) {
 
