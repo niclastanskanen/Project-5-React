@@ -1,12 +1,12 @@
-# Snap Tap App
+# Snap Tap App :desktop_computer:
 
+Snaptapapp is a closed app for photo enthusiasts who wish to share their daily lives with their friends and family. An easy-to-navigate, fast, and easy-to-use website that makes it easy to find what you are looking for.
 
+## The Live link can be found here -> [Snap Tap App](https://snaptapapp.herokuapp.com/)
 
 ![Website Preview](docs/readme/images/responsive.png)
 
-## Demo
 
-[Frontend - Deployment](https://snaptapapp.herokuapp.com/)
 
 ### API Project Links
 
