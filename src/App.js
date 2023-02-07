@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './api/axiosDefaults';
-import { useCurrentUser } from './contexts/CurrentUserContext';
+// import { useCurrentUser } from './contexts/CurrentUserContext';
 
 import Home from './container/Home';
 
@@ -10,12 +10,12 @@ import SignUpForm from './pages/auth/SignUpForm';
 import { Login } from './components';
 
 const App = () => {
-  const navigate = useNavigate();
-  const currentUser = useCurrentUser();
+  // const navigate = useNavigate();
+  // const currentUser = useCurrentUser();
 
-  useEffect(() => {
-    if (!currentUser) navigate('/login');
-  }, [currentUser, navigate]);
+  // useEffect(() => {
+  //   if (!currentUser) navigate('/login');
+  // }, [currentUser, navigate]);
 
   return (
     <Routes>
