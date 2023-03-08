@@ -69,7 +69,7 @@ const Sidebar = ({ closeToggle }) => {
         onClick={handleCloseSidebar}
       >
         <img src={currentUser?.profile_image} className='w-10 h-10 rounded-full' alt='User Profile' />
-        <p>{currentUser?.profile_id}</p>
+        <p>{currentUser?.username}</p>
         <AiOutlineArrowRight fontSize={24} />
       </Link>
     </div>
