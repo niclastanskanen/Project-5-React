@@ -33,6 +33,8 @@ Snaptapapp is a closed app for photo enthusiasts who wish to share their daily l
   - [Username and Password Edit Forms](#username-and-password-edit-forms)
   - [Upload Images](#Upload-Images)
   - [Feed / Search](#Feed-/-Search)
+  - [Components](#Components)
+    - [Components used in this application](#Components-used-in-this-application)
 - [Testing](#testing)
   - [User Story Testing](#user-story-testing)
   - [Bugs](#bugs)
@@ -150,6 +152,44 @@ Google fonts Lato and sans-serif as back up -> https://fonts.google.com/specimen
 ![Edit Image](docs/readme/images/features-edit-image.png)
 ![Edit Image](docs/readme/images/features-edit-image2.png)
 
+## Components
+
+Components in ReactJS allow developers to break user interfaces into elements that can be reused across a variety of applications by providing independent and reusable blocks of code. Managing a large code base this way reduces code duplication and complexity (update the component once instead of each page).
+
+It is also possible to update individual components independently, so that errors in one component can be addressed independently of those in other components, preventing the entire page from failing to load as a result.
+
+The following components were developed during the development of this project. All components offer the following benefits:
+
+- Code can be consolidated into a single re-usable component that can be used in multiple parts of the application and debugged in a single location.
+
+- Provided a consistent user experience across pages without having to duplicate code or manage duplicate code.
+
+### Components used in this application
+
+- Avatar
+  - Used to display the user avatar in different variations throughout the site (based on use and viewport size).
+  - UX experience is improved as users can quickly identify the author of image.
+
+- Dropdown
+  - Used on profile's upload image to fast edit or delete photos.
+  - The UX was improved by presenting consistent icons across the site
+
+- Navbar
+  - Every page has a navigation bar that provides access to search, profile view, add photo, and signout, which improves the user experience.
+
+- Search
+  - Search is used in the Navbar to increase accessibility for the user to be able to search wherever they are on the application
+
+- Not Found
+  - This component is displayed when a user navigates to a resource that doesn't exist.
+  - It improves the user experience by providing feedback when an error has occurred and allowing the NavBar to remain accessible so they can continue to use the site.
+
+- MasonryLayout
+  - Masonry layout is a layout method where one axis uses a typical strict grid layout, most often columns, and the other a masonry layout. On the masonry axis, rather than sticking to a strict grid with gaps being left after shorter items, the items in the following row rise up to completely fill the gaps.
+
+- Spinner
+  - The react-loader-spinner that provides a simple and attractive SVG spinner component that is been used on all pages when data is loading.
+  - Spinner component provides a way to show the loading effect increase the user experience
 
 <hr>
 
