@@ -85,7 +85,7 @@ function ImageEdit() {
                     </form>
                     <div className="flex justify-end items-end mt-5">
                         <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none' type="submit">
-                            Upload Photo
+                            Save
                         </button>
                     </div>
                 </div>

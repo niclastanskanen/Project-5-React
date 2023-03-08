@@ -82,9 +82,16 @@ function UploadImage() {
                             className='outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2'
                         />
                     </form>
-                    <div className="flex justify-end items-end mt-5">
+                    <div className="flex justify-end items-end mt-5 space-x-4">
+                        <button
+                            className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none'
+                            type="submit"
+                            onClick={() => navigate(-1)}
+                        >
+                            Go Back
+                        </button>
                         <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none' type="submit">
-                            Upload Photo
+                            Save
                         </button>
                     </div>
                 </div>
@@ -94,8 +101,6 @@ function UploadImage() {
 
     return (
         <form onSubmit={handleSubmit}>
-
-            <form className="text-center">
                 {image ? (
                     <>
                         <figure>
@@ -115,12 +120,13 @@ function UploadImage() {
                         </div>
                     </>
                 ) : (
+
                     <p
                         className="font-bold text-2xl"
                         htmlFor="image-upload"
                     >
                         <AiOutlineUpload />
-                        </p>
+                    </p>
                 )}
                 <input
                     type='file'
@@ -130,10 +136,7 @@ function UploadImage() {
                     ref={imageInput}
                     className='block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-400 file:text-white hover:file:bg-red-300'
                 ></input>
-            </form>
-
             {textFields}
-
         </form>
     );
 }
