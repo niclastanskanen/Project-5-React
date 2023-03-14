@@ -14,16 +14,17 @@ const App = () => {
 
   return (
     <Routes>
-      <Route
+      {/* <Route
         path='/*'
         element={currentUser
           ? <Home />
           : <Navigate to='/login' replace />
         }
-      />
+      /> */}
       <Route path='/login' element={<Login />} />
       <Route path='/signin' element={<SignInForm />} />
       <Route path='/signup' element={<SignUpForm />} />
+      <Route path='/*' element={<Home />} />
     </Routes>
   );
 };

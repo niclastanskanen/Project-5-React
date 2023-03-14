@@ -124,7 +124,7 @@ function Profile() {
                 ))}
             </div>
           </div>
-          {profile?.content && <col className="p-3">{profile.content}</col>}
+          {profile?.content && <div className="p-3">{profile.content}</div>}
         </div>
       </div>
     </>

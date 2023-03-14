@@ -6,7 +6,7 @@ import Feed from './Feed';
 import logo from '../assets/logo.png'
 
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
-import { Sidebar, Profile, ProfileEditForm, UsernameForm, UserPasswordForm } from '../components';
+import { Sidebar, Profile } from '../components';
 import Avatar from '../components/Avatar';
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
@@ -64,9 +64,6 @@ const Home = () => {
       <div className='pb-2 flex-1 h-screen overflow-y-scroll p-5' ref={scrollRef}>
         <Routes>
           <Route path='/profiles/:id' element={<Profile />} />
-          <Route path='/profiles/:id/edit' element={<ProfileEditForm />} />
-          <Route path='/profiles/:id/edit/username' element={<UsernameForm />} />
-          <Route path='/profiles/:id/edit/password' element={<UserPasswordForm />} />
           <Route path='/*' element={<Feed />} />
         </Routes>
       </div>
