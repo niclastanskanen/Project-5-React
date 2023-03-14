@@ -49,7 +49,7 @@ function ImageEdit() {
 
         try {
             await axiosReq.put(`/posts/${id}`, formData);
-            navigate(`/posts/${id}`);
+            navigate(`/image/${id}`);
         } catch (err) {
 
             if (err.response?.status !== 401) {
