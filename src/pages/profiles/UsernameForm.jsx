@@ -35,7 +35,6 @@ const UsernameForm = () => {
       }));
       navigate(-1);
     } catch (err) {
-      console.log(err);
       setErrors(err.response?.data);
     }
   };
