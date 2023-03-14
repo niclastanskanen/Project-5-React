@@ -41,7 +41,6 @@ function Search({ message, filter = '' }) {
   return (
     <div className="h-100">
       <div className="py-2 p-0 p-lg-2">
-        <i className='fas fa-search' />
         <form
           className=''
           onSubmit={(event) => event.preventDefault()}
