@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Spinner from '../../components/Spinner';
 import { fetchMoreData } from '../../utils/utils';
 import { Navbar } from '../../components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ProfilePost from './ProfilePost';
+import { AiOutlineUser, AiOutlineIdcard } from 'react-icons/ai';
+import { MdOutlinePassword } from 'react-icons/md';
 
 
 
 function Profile() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
+
+  const navigate = useNavigate();
 
   const currentUser = useCurrentUser();
   const { id } = useParams();
@@ -66,6 +70,34 @@ function Profile() {
                 alt='profile'
               />
               <h1 className='font-bold text-3xl text-center mt-3'>{profile?.owner}</h1>
+              {is_owner && (
+              <div className='flex items-center justify-center gap-10 pt-2'>
+                <div className='flex flex-col items-center'>
+                  <AiOutlineIdcard 
+                    className='cursor-pointer'
+                    fontSize={34}
+                    onClick={() => navigate(`/profiles/${id}/edit`)}
+                  />
+                  <p>Edit Profile</p>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <AiOutlineUser
+                    className='cursor-pointer'
+                    fontSize={34}
+                    onClick={() => navigate(`/profiles/${id}/edit/username`)}
+                  />
+                  <p>Change Username</p>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <MdOutlinePassword
+                    className='cursor-pointer'
+                    fontSize={34}
+                    onClick={() => navigate(`/profiles/${id}/edit/password`)}
+                    />
+                  <p>Change Password</p>
+                </div>
+              </div>
+              )}
               <p className='mt-3 text-center'>{profile?.posts_count} Posts</p>
               <p>{profile?.followers_count} Followers</p>
               <p>{profile?.following_count} Following</p>
@@ -103,7 +135,7 @@ function Profile() {
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
-          <ProfilePost key={post.id} {...post} setPosts={setProfilePosts} className='w-max' />
+            <ProfilePost key={post.id} {...post} setPosts={setProfilePosts} className='w-max' />
           ))}
           dataLength={profilePosts.results.length}
           loader={<Spinner />}
@@ -120,18 +152,18 @@ function Profile() {
 
   return (
 
-<div>
+    <div>
       <Navbar />
-      
-        {hasLoaded ? (
-          <>
-            {mainProfile}
-            {mainProfilePosts}
-          </>
-        ) : (
-          <Spinner />
-        )}
-      </div>
+
+      {hasLoaded ? (
+        <>
+          {mainProfile}
+          {mainProfilePosts}
+        </>
+      ) : (
+        <Spinner />
+      )}
+    </div>
 
   )
 }
