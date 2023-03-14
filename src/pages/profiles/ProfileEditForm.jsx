@@ -144,7 +144,6 @@ const ProfileEditForm = () => {
       </div>
       <div>{textFields}</div>
     </form>
-
   )
 }
 
