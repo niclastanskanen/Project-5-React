@@ -6,7 +6,7 @@ import Feed from './Feed';
 import logo from '../assets/logo.png'
 
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
-import { Sidebar, Profile, ProfileEditForm, UsernameForm, UserPasswordForm, NotFound } from '../components';
+import { Sidebar, Profile, ProfileEditForm, UsernameForm, UserPasswordForm } from '../components';
 import Avatar from '../components/Avatar';
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
@@ -68,7 +68,6 @@ const Home = () => {
           <Route path='/profiles/:id/edit/username' element={<UsernameForm />} />
           <Route path='/profiles/:id/edit/password' element={<UserPasswordForm />} />
           <Route path='/*' element={<Feed />} />
-          <Route path='/notfound' element={<NotFound />} />
         </Routes>
       </div>
     </div>
