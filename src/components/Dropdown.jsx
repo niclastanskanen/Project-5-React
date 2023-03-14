@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const Options = React.forwardRef(({ onClick }, ref) => (
     <BsThreeDotsVertical
@@ -22,9 +23,7 @@ export const Dropdown = ({ handleEdit, handleDelete }) => {
             <AiOutlineEdit className='cursor-pointer' fontSize={34} onClick={handleEdit}>Edit</AiOutlineEdit>
             <AiOutlineDelete className='cursor-pointer' fontSize={34} onClick={handleDelete}>Delete</AiOutlineDelete>
         </div>
-
-
-    )
-}
+    );
+};
 
 export default Dropdown
