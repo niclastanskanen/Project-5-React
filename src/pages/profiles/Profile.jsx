@@ -98,7 +98,7 @@ function Profile() {
                 </div>
               </div>
               )}
-              <p className='mt-3 text-center'>{profile?.posts_count} Posts</p>
+              <p className='mt-3'>{profile?.posts_count} Posts</p>
               <p>{profile?.followers_count} Followers</p>
               <p>{profile?.following_count} Following</p>
             </div>
