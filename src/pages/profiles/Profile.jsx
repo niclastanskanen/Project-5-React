@@ -24,6 +24,8 @@ function Profile() {
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
 
+  const { handleFollow, handleUnfollow } = useSetProfileData();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -75,6 +77,7 @@ function Profile() {
                   <button
                     type="button"
                     className="bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full w-28 outline-none"
+                    onClick={() => handleUnfollow(profile)}
                   >
                     unfollow
                   </button>
@@ -82,6 +85,7 @@ function Profile() {
                   <button
                     type="button"
                     className="bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full w-28 outline-none"
+                    onClick={() => handleFollow(profile)}
                   >
                     follow
                   </button>
