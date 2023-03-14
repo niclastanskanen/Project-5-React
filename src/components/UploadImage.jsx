@@ -68,18 +68,17 @@ function UploadImage() {
                             name="title"
                             value={title}
                             onChange={handleChange}
-                            className='outline-none text-2xl sm:text-3xl font-bold border-b-2 border-gray-200 p-2'
+                            className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                         />
                     </form>
                     <form>
                         <p>Content</p>
-                        <input
-                            as="textarea"
+                        <textarea
                             rows={6}
                             name="content"
                             value={content}
                             onChange={handleChange}
-                            className='outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2'
+                            className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                         />
                     </form>
                     <div className="flex justify-end items-end mt-5 space-x-4">
