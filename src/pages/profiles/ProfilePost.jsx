@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';
 import Dropdown from '../../components/Dropdown';
 import { FcLike, FcDislike } from 'react-icons/fc';
 import Avatar from '../../components/Avatar';
-
 
 const ProfilePost = (props) => {
   const {
@@ -19,6 +19,7 @@ const ProfilePost = (props) => {
     title,
     content,
     image,
+    image_filter,
     updated_at,
     setPosts,
   } = props;
@@ -81,7 +82,7 @@ const ProfilePost = (props) => {
         {owner}
       </Link>
       <Link to={`/image/${id}`}>
-      <img className="w-max" src={image} alt={title} />
+      <img className="max-w" src={image} alt={title} />
       </Link>
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
@@ -97,6 +98,7 @@ const ProfilePost = (props) => {
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{likes_count} Likes</span>
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{comments_count} Comments</span>
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{updated_at}</span>
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{image_filter}</span>
       </div>
       {is_owner && (
       <div>
