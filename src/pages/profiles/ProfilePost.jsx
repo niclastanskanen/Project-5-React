@@ -85,7 +85,7 @@ const ProfilePost = (props) => {
         <Link to={`/image/${id}`}>
           <img className="flex justify-center" src={image} alt={title} />
         </Link>
-        <div className="flex flex-col justify-center imtes-center px-6 py-4">
+        <div className="flex flex-col justify-center items-center px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>
           <p className="text-gray-700 text-base">
             {content}
