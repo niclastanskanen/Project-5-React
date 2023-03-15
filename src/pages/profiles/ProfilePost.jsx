@@ -75,35 +75,37 @@ const ProfilePost = (props) => {
   };
 
   return (
-    
+
     <div className="max-w rounded overflow-hidden shadow-lg pt-5">
       <Link to={`/profiles/${profile_id}`}>
         <Avatar src={profile_image} height={55} />
         {owner}
       </Link>
-      <Link to={`/image/${id}`}>
-      <img className="max-w" src={image} alt={title} />
-      </Link>
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">
-          {content}
-        </p>
+      <div className='flex flex-col justify-center items-center'>
+        <Link to={`/image/${id}`}>
+          <img className="flex justify-center" src={image} alt={title} />
+        </Link>
+        <div className="flex flex-col justify-center imtes-center px-6 py-4">
+          <div className="font-bold text-xl mb-2">{title}</div>
+          <p className="text-gray-700 text-base">
+            {content}
+          </p>
         </div>
         <div className='flex justify-center items-center gap-10'>
-          <FcLike onClick={handleLike} /> 
+          <FcLike onClick={handleLike} />
           <FcDislike onClick={handleUnlike} />
-      </div>
-      <div className="px-6 pt-4 pb-2">
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{likes_count} Likes</span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{comments_count} Comments</span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{updated_at}</span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{image_filter}</span>
+        </div>
+        <div className="px-6 pt-4 pb-2">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{likes_count} Likes</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{comments_count} Comments</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{updated_at}</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{image_filter}</span>
+        </div>
       </div>
       {is_owner && (
-      <div>
-        <Dropdown handleEdit={handleEdit} handleDelete={handleDelete} />
-      </div>
+        <div>
+          <Dropdown handleEdit={handleEdit} handleDelete={handleDelete} />
+        </div>
       )}
     </div>
   )
