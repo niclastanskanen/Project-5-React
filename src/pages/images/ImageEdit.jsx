@@ -9,8 +9,9 @@ function ImageEdit() {
         title: '',
         content: '',
         image: '',
+        image_filter: '',
     });
-    const { title, content, image } = postData;
+    const { title, content, image, image_filter } = postData;
 
     const imageInput = useRef(null);
     const navigate = useNavigate();
@@ -20,10 +21,10 @@ function ImageEdit() {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/posts/${id}/`);
-                const { title, content, image, is_owner } = data;
-                is_owner ? setPostData({ title, content, image }) : navigate('/');
+                const { title, content, image, is_owner, image_filter } = data;
+                is_owner ? setPostData({ title, content, image, image_filter }) : navigate('/');
             } catch (err) {
-
+                console.log(err)
             }
         };
         handleMount();
@@ -51,6 +52,7 @@ function ImageEdit() {
         const formData = new FormData();
         formData.append('title', title);
         formData.append('content', content);
+        formData.append('image_filter', image_filter);
 
         if (imageInput?.current?.files[0]) {
             formData.append('image', imageInput.current.files[0]);
@@ -60,7 +62,7 @@ function ImageEdit() {
             await axiosReq.put(`/posts/${id}/`, formData);
             navigate(`/image/${id}`);
         } catch (err) {
-
+            console.log(err)
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }
@@ -90,6 +92,24 @@ function ImageEdit() {
                             onChange={handleChange}
                             className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                         />
+                    </form>
+                    <form>
+                        <p>Category</p>
+                        <select
+                            name="image_filter"
+                            value={image_filter}
+                            onChange={handleChange}
+                            className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                        >
+                            <option value='art'>Art</option>
+                            <option value='cats'>Cats</option>
+                            <option value='dogs'>Dogs</option>
+                            <option value='food'>Food</option>
+                            <option value='nature'>Nature</option>
+                            <option value='photo'>photo</option>
+                            <option value='travel'>Travel</option>
+                            <option value='wallpaper'>Wallpaper</option>
+                        </select>
                     </form>
                     <div className="flex justify-end items-end mt-5">
                         <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none' type="submit">
