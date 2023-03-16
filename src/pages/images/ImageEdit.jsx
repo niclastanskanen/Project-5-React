@@ -126,7 +126,13 @@ function ImageEdit() {
                             {message}
                         </div>
                     ))}
-                    <div className="flex justify-end items-end mt-5">
+                    <div className="flex justify-end items-end mt-5 space-x-4">
+                    <button
+                            className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none'
+                            onClick={() => navigate(-1)}
+                        >
+                            Go Back
+                        </button>
                         <button className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none' type="submit">
                             Save
                         </button>
