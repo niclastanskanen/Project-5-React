@@ -452,14 +452,16 @@ Site was tested using the following desktop and mobile browsers:
 
 ![Bug](docs/readme/images/bug-jwttooken.png)
 
+### Sidebar categories, don't render and I took that away and using placeholder instead.
+:white_check_mark: Fixed with API call to render image_filter
+
+![Bug](docs/readme/images/bug-sidebar-categories.png)
+
 ### Remaining Bugs
 
 ### My main search in top dosn't work with search function but when I put in another one outside navbar then its working.
 
 ![Bug](docs/readme/images/bug-search.png)
-
-### Sidebar categories, don't render and I took that away and using placeholder instead.
-![Bug](docs/readme/images/bug-sidebar-categories.png)
 
 ### Page 404 don't render or render all time.
 ![Bug](docs/readme/images/bug-404-not-found.png)
