@@ -5,7 +5,6 @@ import { AiOutlineSearch, AiOutlineLogout } from 'react-icons/ai'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
-import Search from './Search';
 
 
 const Navbar = ({ searchTerm, setSearchTerm}) => {

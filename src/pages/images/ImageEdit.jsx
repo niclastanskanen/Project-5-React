@@ -116,7 +116,7 @@ function ImageEdit() {
                             <option value='dogs'>Dogs</option>
                             <option value='food'>Food</option>
                             <option value='nature'>Nature</option>
-                            <option value='photo'>photo</option>
+                            <option value='photo'>Photo</option>
                             <option value='travel'>Travel</option>
                             <option value='wallpaper'>Wallpaper</option>
                         </select>

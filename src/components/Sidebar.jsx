@@ -1,23 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineArrowRight } from 'react-icons/ai';
 
+import { axiosReq } from '../api/axiosDefaults';
 import logo from '../assets/logo.png';
 import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
 const isActiveStyle = 'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize';
-
-const categories = [
-  { name: 'Art' },
-  { name: 'Cats' },
-  { name: 'Dogs' },
-  { name: 'Food' },
-  { name: 'Nature' },
-  { name: 'Photo' },
-  { name: 'Travel' },
-  { name: 'Wallpaper' },
-]
 
 const Sidebar = ({ closeToggle }) => {
   const currentUser = useCurrentUser();
@@ -25,6 +15,29 @@ const Sidebar = ({ closeToggle }) => {
   const handleCloseSidebar = () => {
     if (closeToggle) closeToggle(false);
   }
+
+  const [data, setData] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axiosReq.get('/posts/')
+      .then(response => {
+        setData(response.data.results);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    const allCategories = ['art', 'cats', 'dogs', 'food', 'nature', 'photo', 'travel', 'wallpaper'];
+    const dataCategories = data.map(item => item.image_filter);
+    const categoriesSet = new Set([...allCategories, ...dataCategories]);
+    const categoriesArray = Array.from(categoriesSet);
+    setCategories(categoriesArray);
+  }, [data]);
+
+  const filteredCategories = categories.filter(category => category !== 'normal');
 
   return (
     <div className='flex flex-col justify-between bg-white h-full overflow-y-scroll min-w-210 hide-scrollbar'>
@@ -46,14 +59,14 @@ const Sidebar = ({ closeToggle }) => {
             Home
           </NavLink>
           <h3 className='mt-2 px-5 text-base 2xl:text-xl'>Categories</h3>
-          {categories.slice(0, categories.length).map((category) => (
+          {filteredCategories.map((category, index) => (
             <NavLink
-              to={`/category/${category.name}`}
+              key={index}
+              to={`/category/${category}`}
               className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}
               onClick={handleCloseSidebar}
-              key={category.name}
             >
-              {category.name}
+              {category}
             </NavLink>
           ))}
         </div>
