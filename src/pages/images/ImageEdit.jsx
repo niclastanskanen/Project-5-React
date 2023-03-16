@@ -161,8 +161,14 @@ function ImageEdit() {
                                     className="sr-only"
                                     onChange={handleChangeImage}
                                     ref={imageInput}
+                                    accept='image/*'
                                 />
                             </label>
+                            {errors?.image?.map((message, idx) => (
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
+                                    {message}
+                                </div>
+                            ))}
                             <p className="pl-1">or drag and drop</p>
                         </div>
                         <p className="text-xs text-gray-500">PNG, JPG, GIF up to 2MB</p>
