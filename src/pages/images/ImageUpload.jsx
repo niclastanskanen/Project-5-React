@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 
 import { useNavigate } from "react-router";
-import { axiosReq } from '../api/axiosDefaults';
+import { axiosReq } from '../../api/axiosDefaults';
 
-function UploadImage() {
+function ImageUpload() {
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({
@@ -187,4 +187,4 @@ function UploadImage() {
         </form>
     );
 }
-export default UploadImage
+export default ImageUpload

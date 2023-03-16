@@ -6,7 +6,8 @@ import Feed from './Feed';
 import logo from '../assets/logo.png'
 
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
-import { Sidebar, Profile } from '../components';
+import { Sidebar } from '../components';
+import { Profile } from '../pages';
 import Avatar from '../components/Avatar';
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { Navbar, ImageFeed, ImageDetail, UploadImage, Search, ProfileEditForm, UsernameForm, UserPasswordForm, CategoryImages } from '../components';
+import { Navbar, Search, } from '../components';
+import { ImageEdit, ImageFeed, ImageDetail, ImageUpload, ImageCategory, ProfileEditForm, UsernameForm, UserPasswordForm } from '../pages';
 import { useRedirect } from '../hooks/useRedirect';
-import ImageEdit from '../pages/images/ImageEdit';
-
 
 const Feed = () => {
   useRedirect("loggedOut");
@@ -20,12 +19,12 @@ const Feed = () => {
           <Route path='/image' element={<ImageFeed />} />
           <Route path='/image/:id' element={<ImageDetail />} />
           <Route path='/image/:id/edit' element={<ImageEdit />} />
-          <Route path='/upload' element={<UploadImage />} />
+          <Route path='/upload' element={<ImageUpload />} />
           <Route path='/search' element={<Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />} />
           <Route path='/profiles/:id/edit' element={<ProfileEditForm />} />
           <Route path='/profiles/:id/edit/username' element={<UsernameForm />} />
           <Route path='/profiles/:id/edit/password' element={<UserPasswordForm />} />
-          <Route path='/category/:category' element={<CategoryImages />} />
+          <Route path='/category/:category' element={<ImageCategory />} />
         </Routes>
       </div>
     </div>
