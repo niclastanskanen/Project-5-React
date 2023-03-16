@@ -25,13 +25,14 @@ function SignInForm() {
             setTokenTimestamp(data);
             navigate('/');
         } catch (err) {
-            setErrors(err.response?.data);
+            // setErrors(err.response?.data);
             setLoginFailed(true);
+            console.log(err)
         }
     };
 
     const [loginFailed, setLoginFailed] = useState(false);
-    const [errors, setErrors] = useState({});
+    // const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
         setSignInData({

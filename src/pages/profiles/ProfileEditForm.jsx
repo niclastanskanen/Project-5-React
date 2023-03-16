@@ -108,6 +108,11 @@ const ProfileEditForm = () => {
         className='rounded p-5'
         alt='user'
       />
+      {errors?.image?.map((message, idx) => (
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
+          {message}
+        </div>
+      ))}
       <div className='flex flex-col items-center justify-center'>
         <label className="block text-sm font-medium leading-6 text-gray-900">Change Profile Image</label>
         <div className="mt-2 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">

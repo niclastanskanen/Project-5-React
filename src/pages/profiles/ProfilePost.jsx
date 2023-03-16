@@ -92,8 +92,8 @@ const ProfilePost = (props) => {
           </p>
         </div>
         <div className='flex justify-center items-center gap-10'>
-          <FcLike class="cursor-pointer" onClick={handleLike} size={25} />
-          <FcDislike class="cursor-pointer" onClick={handleUnlike} size={25} />
+          <FcLike className="cursor-pointer hover:ease-in" onClick={handleLike} size={25} />
+          <FcDislike className="cursor-pointer" onClick={handleUnlike} size={25} />
         </div>
         <div className="px-6 pt-4 pb-2">
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{likes_count} Likes</span>

@@ -52,6 +52,7 @@ function UploadImage() {
             console.log(err)
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
+                console.log(err)
             }
         }
     };
@@ -71,6 +72,11 @@ function UploadImage() {
                             className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                         />
                     </form>
+                    {errors?.title?.map((message, idx) => (
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
+                            {message}
+                        </div>
+                    ))}
                     <form>
                         <p>Content</p>
                         <textarea
@@ -81,6 +87,11 @@ function UploadImage() {
                             className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                         />
                     </form>
+                    {errors?.content?.map((message, idx) => (
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
+                            {message}
+                        </div>
+                    ))}
                     <form>
                         <p>Category</p>
                         <select
@@ -99,6 +110,11 @@ function UploadImage() {
                             <option value='wallpaper'>Wallpaper</option>
                         </select>
                     </form>
+                    {errors?.image_filter?.map((message, idx) => (
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
+                            {message}
+                        </div>
+                    ))}
                     <div className="flex justify-end items-end mt-5 space-x-4">
                         <button
                             className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none'
@@ -117,41 +133,46 @@ function UploadImage() {
 
     return (
         <form onSubmit={handleSubmit}>
-                {image ? (
-                    <>
-                        <figure>
-                            <img
-                                src={image}
-                                className='rounded p-5'
-                                alt="user"
-                            />
-                        </figure>
-                        <div>
-                            <button
-                                className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none'
-                                htmlFor="image-upload"
-                            >
-                                Change the image
-                            </button>
-                        </div>
-                    </>
-                ) : (
+            {image ? (
+                <>
+                    <figure>
+                        <img
+                            src={image}
+                            className='rounded p-5'
+                            alt="user"
+                        />
+                    </figure>
+                    <div>
+                        <button
+                            className='bg-red-400 hover:bg-red-300 text-white font-bold p-2 rounded-full outline-none'
+                            htmlFor="image-upload"
+                        >
+                            Change the image
+                        </button>
+                    </div>
+                </>
+            ) : (
 
-                    <p
-                        className="font-bold text-2xl"
-                        htmlFor="image-upload"
-                    >
-                        <AiOutlineUpload />
-                    </p>
-                )}
-                <input
-                    type='file'
-                    id="image-upload"
-                    accept="image/*"
-                    onChange={handleChangeImage}
-                    ref={imageInput}
-                    className='block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-400 file:text-white hover:file:bg-red-300'
-                ></input>
+                <p
+                    className="font-bold text-2xl"
+                    htmlFor="image-upload"
+                >
+                    <AiOutlineUpload />
+                </p>
+            )}
+            <input
+                type='file'
+                id="image-upload"
+                accept="image/*"
+                onChange={handleChangeImage}
+                ref={imageInput}
+                className='block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-400 file:text-white hover:file:bg-red-300'
+            />
+            {errors?.image?.map((message, idx) => (
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
+                    {message}
+                </div>
+            ))}
             {textFields}
         </form>
     );
