@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { LikedPosts, Navbar, Search, } from '../components';
+import { LikedImage, Navbar, Search, } from '../components';
 import { ImageEdit, ImageFeed, ImageDetail, ImageUpload, ImageCategory, ProfileEditForm, UsernameForm, UserPasswordForm } from '../pages';
 import { useRedirect } from '../hooks/useRedirect';
 
@@ -25,7 +25,7 @@ const Feed = () => {
           <Route path='/profiles/:id/edit/username' element={<UsernameForm />} />
           <Route path='/profiles/:id/edit/password' element={<UserPasswordForm />} />
           <Route path='/category/:category' element={<ImageCategory />} />
-          <Route path='/likedposts' element={<LikedPosts />} />
+          <Route path='/likes' element={<LikedImage />} />
         </Routes>
       </div>
     </div>

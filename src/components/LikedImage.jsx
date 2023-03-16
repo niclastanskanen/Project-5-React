@@ -5,7 +5,7 @@ import { axiosReq } from "../api/axiosDefaults";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import Spinner from "./Spinner";
 
-function LikedPosts() {
+function LikedImage() {
     const [likedPosts, setLikedPosts] = useState([]);
     const currentUser = useCurrentUser();
     const [isLoading, setIsLoading] = useState(true);
@@ -79,4 +79,4 @@ function LikedPosts() {
     );
 }
 
-export default LikedPosts;
+export default LikedImage;
