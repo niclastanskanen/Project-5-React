@@ -416,42 +416,45 @@ Site was tested using the following desktop and mobile browsers:
 
 ### Image detail don't render correct
 :white_check_mark: Fixed with correct url path, instead of ```'/image/:Imageid/'``` to ```'/image/:id/'```
+
 ![Bug](docs/readme/images/bug-axios-ImageDetail.png)
 
 ### Choose file dosn't hide when preview image to upload.
 :white_check_mark: Fixed with a typo on closing tag.
+
 ![Bug](docs/readme/images/bug-upload-image.png)
 
 ### Sidebar profile name, don't render, its working with profile ID?
 :white_check_mark: Fixed with username instead of profile name.
+
 ![Bug](docs/readme/images/bug-sidebar-profile-name.png)
 
 ### Edit image/post dosn't render previews info.
 :white_check_mark: Fixed with correct url path, instead of ```'/image/:Imageid/edit'``` to ```'/image/:id/edit'```
+
 ![Bug](docs/readme/images/bug-edit-post.png)
 
 ### When you are not loggedin, you should not have access to homepage. When if currentuser are used, it got stack in "login loop" and it broke.
 :white_check_mark: Fixed with useRedirect hook and redirect user if not ```"loggedIn``` or ```loggedOut```
+
 ![Bug](docs/readme/images/bug-stay-login.png)
 
 ### jwttooken didn't worked in dev but seems to be working on live site.
 :white_check_mark: Fixed with useRedirect hook
+
 ![Bug](docs/readme/images/bug-jwttooken.png)
 
 ### Remaining Bugs
 
 ### My main search in top dosn't work with search function but when I put in another one outside navbar then its working.
-![Bug](docs/readme/images/bug-search.png)
 
+![Bug](docs/readme/images/bug-search.png)
 
 ### Sidebar categories, don't render and I took that away and using placeholder instead.
 ![Bug](docs/readme/images/bug-sidebar-categories.png)
 
-
 ### Page 404 don't render or render all time.
 ![Bug](docs/readme/images/bug-404-not-found.png)
-
-
 
 <hr>
 
