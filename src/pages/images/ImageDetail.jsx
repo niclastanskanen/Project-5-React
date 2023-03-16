@@ -28,7 +28,6 @@ function ImageDetail() {
   return (
     <div className="flex xl:flex-row flex-col m-auto bg-white">
       <ProfilePost {...post.results[0]} setPosts={setPost} postPage />
-      <div>Comment</div>
     </div>
   )
 }
