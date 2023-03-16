@@ -9,4 +9,5 @@ export { default as Search } from './Search';
 export { default as ProfileEditForm } from '../pages/profiles/ProfileEditForm';
 export { default as UsernameForm } from '../pages/profiles/UsernameForm';
 export { default as UserPasswordForm } from '../pages/profiles/UserPasswordForm';
+export { default as CategoryImages } from './CategoryImages';
 export { default as NotFound } from './NotFound';
