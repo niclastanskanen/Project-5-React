@@ -4,8 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 
-
 const ProfileEditForm = () => {
+
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const { id } = useParams();

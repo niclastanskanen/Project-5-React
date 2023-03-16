@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { Navbar, ImageFeed, ImageDetail, UploadImage, Search, ProfileEditForm, UsernameForm, UserPasswordForm } from '../components';
+import { useRedirect } from '../hooks/useRedirect';
 import ImageEdit from '../pages/images/ImageEdit';
 
 
 const Feed = () => {
+  useRedirect("loggedOut");
   const [searchTerm, setSearchTerm] = useState('')
   return (
     <div className='px-2 md:px-5'>

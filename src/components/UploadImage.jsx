@@ -5,9 +5,7 @@ import { axiosReq } from '../api/axiosDefaults';
 import { AiOutlineUpload } from 'react-icons/ai';
 
 
-
 function UploadImage() {
-
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({

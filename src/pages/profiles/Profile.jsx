@@ -12,8 +12,8 @@ import { AiOutlineUser, AiOutlineIdcard } from 'react-icons/ai';
 import { MdOutlinePassword } from 'react-icons/md';
 
 
-
 function Profile() {
+
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
 

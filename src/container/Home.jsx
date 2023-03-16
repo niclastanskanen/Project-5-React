@@ -10,9 +10,11 @@ import { Sidebar, Profile } from '../components';
 import Avatar from '../components/Avatar';
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
+import { useRedirect } from '../hooks/useRedirect';
 
 
 const Home = () => {
+  useRedirect("loggedOut");
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const [toggleSidebar, setToggleSidebar] = useState(false);

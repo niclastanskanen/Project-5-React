@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { AiOutlineLogin, AiOutlineUserAdd } from 'react-icons/ai';
 import shareVideo from '../assets/share.mp4'
 import logo from '../assets/logo-white.png'
+import { useRedirect } from '../hooks/useRedirect';
 
 
 const Login = () => {
+  useRedirect("loggedIn");
+  
   return (
     <div className='flex justify-start items-center flex-col h-screen'>
         <div className='relative w-full h-full'>
