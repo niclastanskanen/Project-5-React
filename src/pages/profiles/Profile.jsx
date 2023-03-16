@@ -8,8 +8,8 @@ import { fetchMoreData } from '../../utils/utils';
 import { Navbar } from '../../components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ProfilePost from './ProfilePost';
-import { AiOutlineUser, AiOutlineIdcard } from 'react-icons/ai';
-import { MdOutlinePassword } from 'react-icons/md';
+import { AiOutlineUser, AiOutlineIdcard, AiOutlineHeart } from 'react-icons/ai';
+import { RiLockPasswordLine } from 'react-icons/ri';
 
 
 function Profile() {
@@ -71,7 +71,7 @@ function Profile() {
               />
               <h1 className='font-bold text-3xl text-center mt-3'>{profile?.owner}</h1>
               {is_owner && (
-              <div className='flex items-center justify-center gap-10 pt-2'>
+              <div className='flex flex-col md:flex-row items-center justify-center gap-10 pt-2'>
                 <div className='flex flex-col items-center'>
                   <AiOutlineIdcard 
                     className='cursor-pointer'
@@ -89,12 +89,20 @@ function Profile() {
                   <p>Change Username</p>
                 </div>
                 <div className='flex flex-col items-center'>
-                  <MdOutlinePassword
+                  <RiLockPasswordLine
                     className='cursor-pointer'
                     fontSize={34}
                     onClick={() => navigate(`/profiles/${id}/edit/password`)}
                     />
                   <p>Change Password</p>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <AiOutlineHeart
+                    className='cursor-pointer'
+                    fontSize={34}
+                    onClick={() => navigate('/likes')}
+                    />
+                  <p>Liked Image</p>
                 </div>
               </div>
               )}

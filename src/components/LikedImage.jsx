@@ -41,7 +41,7 @@ function LikedImage() {
 
     return (
         <div className="min-h-screen py-8">
-            <h2 className="text-2xl font-bold mb-4">Liked Posts</h2>
+            <h2 className="text-2xl font-bold mb-4">Liked Images</h2>
             {isLoading ? (
                 <Spinner />
             ) : likedPosts.length > 0 ? (
@@ -49,7 +49,7 @@ function LikedImage() {
                     {likedPosts.map((likedPost) => (
                         <Link to={`/image/${likedPost.post}`} key={likedPost.id}>
                             <li
-                                className="bg-white shadow-md p-4 rounded-lg mb-4 flex"
+                                className="bg-white shadow-md p-4 rounded-lg mb-4 flex flex-col md:flex-row"
                             >
                                 <img
                                     src={likedPost.post_image}
