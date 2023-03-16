@@ -102,6 +102,7 @@ function Profile() {
               <p>{profile?.followers_count} Followers</p>
               <p>{profile?.following_count} Following</p>
             </div>
+            {profile?.content && <div className="flex items-center justify-center italic p-3">{profile.content}</div>}
             <div className='text-center mb-7 mt-7'>
               {currentUser &&
                 !is_owner &&
@@ -124,7 +125,6 @@ function Profile() {
                 ))}
             </div>
           </div>
-          {profile?.content && <div className="p-3">{profile.content}</div>}
         </div>
       </div>
     </>
