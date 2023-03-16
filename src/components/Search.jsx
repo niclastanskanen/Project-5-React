@@ -67,7 +67,7 @@ function Search({ message, filter = '' }) {
                 next={() => fetchMoreData(profilePosts, setProfilePosts)}
               />
             ) : (
-              <div>
+              <div className='pt-10'>
                 <Spinner message={message} />
                 <p>Can't find any photos</p>
                 </div>

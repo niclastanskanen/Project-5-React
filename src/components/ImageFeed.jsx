@@ -5,9 +5,7 @@ const ImageFeed = () => {
 
   return (
     <div>
-    <h1>Image Feed</h1>
     <Search />
-
     </div>
   );
 };
