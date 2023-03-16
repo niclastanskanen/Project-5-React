@@ -151,6 +151,11 @@ function ImageUpload() {
                                     accept='image/*'
                                 />
                             </label>
+                            {errors?.image?.map((message, idx) => (
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
+                                    {message}
+                                </div>
+                            ))}
                 </>
             ) : (
                 <>
