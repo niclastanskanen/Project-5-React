@@ -11,13 +11,12 @@ const isActiveStyle = 'flex items-center px-5 gap-3 font-extrabold border-r-2 bo
 
 const Sidebar = ({ closeToggle }) => {
   const currentUser = useCurrentUser();
+  const [data, setData] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   const handleCloseSidebar = () => {
     if (closeToggle) closeToggle(false);
   }
-
-  const [data, setData] = useState([]);
-  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axiosReq.get('/posts/')

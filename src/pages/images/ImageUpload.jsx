@@ -57,10 +57,9 @@ function ImageUpload() {
 
     const textFields = (
         <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5">
-            <div className=" flex lg:flex-row flex-col justify-center items-center bg-white lg:p-5 p-3 lg:w-4/5  w-full">
+            <div className="flex lg:flex-row flex-col justify-center items-center bg-white lg:p-5 p-3 lg:w-4/5 w-full">
                 <div className="flex flex-1 flex-col gap-6 lg:pl-5 mt-5 w-full">
-                    <form>
-                        <p>Title</p>
+                        <label htmlFor="title" className="block text-sm font-semibold leading-6 text-gray-900">Title
                         <input
                             type="text"
                             name="title"
@@ -68,14 +67,13 @@ function ImageUpload() {
                             onChange={handleChange}
                             className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                         />
-                    </form>
+                        </label>
                     {errors?.title?.map((message, idx) => (
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
                             {message}
                         </div>
                     ))}
-                    <form>
-                        <p>Content</p>
+                        <label htmlFor="content" className="block text-sm font-semibold leading-6 text-gray-900">Content
                         <textarea
                             rows={6}
                             name="content"
@@ -83,14 +81,13 @@ function ImageUpload() {
                             onChange={handleChange}
                             className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                         />
-                    </form>
+                        </label>
                     {errors?.content?.map((message, idx) => (
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
                             {message}
                         </div>
                     ))}
-                    <form>
-                        <p>Category</p>
+                        <label htmlFor="image_filter" className="block text-sm font-semibold leading-6 text-gray-900">Category
                         <select
                             name="image_filter"
                             value={image_filter}
@@ -106,7 +103,7 @@ function ImageUpload() {
                             <option value='travel'>Travel</option>
                             <option value='wallpaper'>Wallpaper</option>
                         </select>
-                    </form>
+                        </label>
                     {errors?.image_filter?.map((message, idx) => (
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" key={idx}>
                             {message}
