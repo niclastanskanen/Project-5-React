@@ -60,7 +60,7 @@ Snaptapapp is a closed app for photo enthusiasts who wish to share their daily l
 
 ## User Stories
 
-- As a user I can view the navbar from every page so that I can easily go by different pages - *Must Have* 
+- User Stories - As a user I can view the navbar from every page so that I can easily go by different pages - *Must Have* 
 - User Stories - As a user I can filter photos so that I can find what I want to see faster - *Should Have*
 - User Stories - As a user I can search for photos and categories so that I can find photos - *Must Have*
 - User Stories - As a user I can choose to signup so that I can use all features - *Must Have*
