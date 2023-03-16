@@ -2,6 +2,10 @@
 
 Snaptapapp is a closed app for photo enthusiasts who wish to share their daily lives with their friends and family. An easy-to-navigate, fast, and easy-to-use website that makes it easy to find what you are looking for.
 
+![React](https://skillicons.dev/icons?i=react,tailwind,heroku)
+
+![Axios](https://axios-http.com/assets/logo.svg)
+
 ## The Live link can be found here -> [Snap Tap App](https://snaptapapp.herokuapp.com/)
 
 ![Website Preview](docs/readme/images/responsive.png)
@@ -431,9 +435,9 @@ Site was tested using the following desktop and mobile browsers:
 
 - Chrome (v.103), Firefox (v.103), Firefox Developer Edition (v.104), Safari (iOS 16 on Iphone 14 ProMax, iPhone 7 and iPad 6th Gen).
 
-### Bugs
+## Bugs
 
-### Fixed Bugs
+## Fixed Bugs
 
 ### Image detail don't render correct
 :white_check_mark: Fixed with correct url path, instead of ```'/image/:Imageid/'``` to ```'/image/:id/'```
@@ -470,7 +474,9 @@ Site was tested using the following desktop and mobile browsers:
 
 ![Bug](docs/readme/images/bug-sidebar-categories.png)
 
-### Remaining Bugs
+----
+
+## Remaining Bugs
 
 ### My main search in top dosn't work with search function but when I put in another one outside navbar then its working.
 
