@@ -24,7 +24,7 @@ function ImageEdit() {
                 const { title, content, image, is_owner, image_filter } = data;
                 is_owner ? setPostData({ title, content, image, image_filter }) : navigate('/');
             } catch (err) {
-                console.log(err)
+
             }
         };
         handleMount();
@@ -62,7 +62,7 @@ function ImageEdit() {
             await axiosReq.put(`/posts/${id}/`, formData);
             navigate(`/image/${id}`);
         } catch (err) {
-            console.log(err)
+
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

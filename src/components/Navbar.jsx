@@ -6,11 +6,11 @@ import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContex
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
 
-
 const Navbar = ({ searchTerm, setSearchTerm}) => {
   const navigate = useNavigate();
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
 
   const handleSignOut = async () => {
     try {
@@ -22,7 +22,6 @@ const Navbar = ({ searchTerm, setSearchTerm}) => {
 
     }
   };
-
 
   return (
     <div className='flex gap-2 md:gap-5 w-full mt-5 pb-7'>

@@ -26,7 +26,7 @@ function SignInForm() {
             navigate('/');
         } catch (err) {
             setLoginFailed(true);
-            console.log(err)
+
         }
     };
 

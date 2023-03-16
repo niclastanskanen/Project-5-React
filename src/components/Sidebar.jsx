@@ -25,7 +25,7 @@ const Sidebar = ({ closeToggle }) => {
         setData(response.data.results);
       })
       .catch(error => {
-        console.log(error);
+
       });
   }, []);
 

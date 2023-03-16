@@ -47,10 +47,10 @@ function UploadImage() {
             const { data } = await axiosReq.post("/posts/", formData);
             navigate(`/image/${data.id}`);
         } catch (err) {
-            console.log(err)
+
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
-                console.log(err)
+
             }
         }
     };

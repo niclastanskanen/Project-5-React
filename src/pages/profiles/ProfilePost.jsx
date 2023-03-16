@@ -54,7 +54,7 @@ const ProfilePost = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err)
+
     }
   };
 
@@ -70,7 +70,7 @@ const ProfilePost = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err)
+
     }
   };
 

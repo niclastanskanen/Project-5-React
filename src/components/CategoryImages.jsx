@@ -13,7 +13,7 @@ const CategoryImages = () => {
         setImages(filteredImages);
       })
       .catch(error => {
-        console.log(error);
+
       });
   }, [category]);
 
