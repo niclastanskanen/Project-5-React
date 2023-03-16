@@ -29,13 +29,11 @@ const SignUpForm = () => {
             await axios.post('/dj-rest-auth/registration/', signUpData);
             navigate('/home');
         } catch (err) {
-            setErrors(err.response?.data);
             setSignupFailed(true);
         }
     };
 
     const [signupFailed, setSignupFailed] = useState(false);
-    const [errors, setErrors] = useState({});
 
 
     return (
