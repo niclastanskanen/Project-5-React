@@ -15,6 +15,7 @@ Snaptapapp is a closed app for photo enthusiasts who wish to share their daily l
 
 <hr>
 
+## Features
 ## Table of Contents
 
 - [User Experience (UX)](#user-experience-ux)
@@ -30,9 +31,12 @@ Snaptapapp is a closed app for photo enthusiasts who wish to share their daily l
   - [Register (Sign up) / Login](#register-sign-up--login)
   - [Profile](#profile)
   - [Profile Edit Form](#profile-edit-form)
-  - [Username and Password Edit Forms](#username-and-password-edit-forms)
+  - [Liked Images](#Liked-Images)
   - [Upload Images](#Upload-Images)
   - [Feed / Search](#Feed-/-Search)
+  - [Edit Image](#Edit-Image)
+  - [Edit Details](#Image-Details)
+  - [Follow](#Follow)
   - [Components](#Components)
     - [Components used in this application](#Components-used-in-this-application)
 - [Testing](#testing)
@@ -139,8 +143,12 @@ Google fonts Lato and sans-serif as back up -> https://fonts.google.com/specimen
 ### Profile
 ![Profile](docs/readme/images/features-profile.png)
 ### Profile Edit Form
+![Profile Edit](docs/readme/images/features-edit-profile.png)
+![Change Username](docs/readme/images/features-change-username.png)
+![Change Password](docs/readme/images/features-change-password.png)
 
-### Username and Password Edit Form
+### Liked Images
+![Liked Images](docs/readme/images/features-liked-image.png)
 
 ### Upload Images
 ![Upload image](docs/readme/images/features-upload-image.png)
@@ -149,8 +157,13 @@ Google fonts Lato and sans-serif as back up -> https://fonts.google.com/specimen
 ![Feed Search](docs/readme/images/features-search.png)
 
 ### Edit Image
+![Edit Image](docs/readme/images/features-change-image-details.png)
+
+### Image Details
 ![Edit Image](docs/readme/images/features-edit-image.png)
-![Edit Image](docs/readme/images/features-edit-image2.png)
+
+### Follow
+![Follow](docs/readme/images/features-follow.png)
 
 ## Components
 
