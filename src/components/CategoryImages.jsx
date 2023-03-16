@@ -19,15 +19,19 @@ const CategoryImages = () => {
 
   return (
     <div>
-      <h2>{category} Images:</h2>
-      <ul>
-        {images.map((image, index) => (
-          <li key={index}>
-            <img src={image.image} alt={image.title} />
-            <p>{image.title}</p>
-          </li>
-        ))}
-      </ul>
+      <h2 className='capitalize'>{category} Images:</h2>
+      {images.length === 0 ? (
+        <p>This category is empty.</p>
+      ) : (
+        <ul>
+          {images.map((image, index) => (
+            <li key={index}>
+              <img src={image.image} alt={image.title} />
+              <p>{image.title}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
