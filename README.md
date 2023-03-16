@@ -374,7 +374,7 @@ User Stories - As a user I can see all my uploaded photos so that I can trace ba
 |---|---|---|---|
 | 1 | Navigate to owner profile and see if uploaded image showing | Image loading sort by uploaded date | :white_check_mark: |
 
-#### User Story [[#23](https://github.com/niclastanskanen/project-5-react/issues/23)
+#### User Story [#23](https://github.com/niclastanskanen/project-5-react/issues/23)
 
 User Stories - As a user I can save photos to my profile so that I can find them faster
 
