@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { axiosRes } from '../../api/axiosDefaults';
 import ProfilePostsByFilter from '../profiles/ProfilePostsByFilter';
 import Spinner from '../../components/Spinner';
-
 
 const ImageCategory = () => {
   const [posts, setPosts] = useState([]);

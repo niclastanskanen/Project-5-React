@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import ProfilePost from '../profiles/ProfilePost';
 import { axiosReq } from '../../api/axiosDefaults';
-
 
 function ImageDetail() {
   const { id } = useParams();

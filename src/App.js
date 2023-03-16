@@ -7,7 +7,6 @@ import Home from './container/Home';
 import { Login } from './components';
 import { SignInForm, SignUpForm } from './pages';
 
-
 const App = () => {
   return (
     <Routes>

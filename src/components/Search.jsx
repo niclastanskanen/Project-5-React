@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { axiosReq } from '../api/axiosDefaults';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { useLocation } from "react-router";
+
 import Spinner from './Spinner';
 import ProfilePost from '../pages/profiles/ProfilePost';
 import { useCurrentUser } from '../contexts/CurrentUserContext';
 import { fetchMoreData } from '../utils/utils';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import { useLocation } from "react-router";
-
 
 function Search({ message, filter = '' }) {
   const [profilePosts, setProfilePosts] = useState({ results: [] });

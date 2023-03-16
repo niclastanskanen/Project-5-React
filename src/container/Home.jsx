@@ -1,18 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineCloseCircle, AiOutlineLogout } from 'react-icons/ai';
+import axios from 'axios';
 
 import Feed from './Feed';
 import logo from '../assets/logo.png'
 
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
-import { Sidebar } from '../components';
+import { Avatar, Sidebar } from '../components';
 import { Profile } from '../pages';
-import Avatar from '../components/Avatar';
-import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
 import { useRedirect } from '../hooks/useRedirect';
-
 
 const Home = () => {
   useRedirect("loggedOut");

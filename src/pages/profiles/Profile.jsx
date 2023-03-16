@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
-import { axiosReq } from '../../api/axiosDefaults';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import Spinner from '../../components/Spinner';
-import { fetchMoreData } from '../../utils/utils';
-import { Navbar } from '../../components';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import ProfilePost from './ProfilePost';
 import { AiOutlineUser, AiOutlineIdcard, AiOutlineHeart } from 'react-icons/ai';
 import { RiLockPasswordLine } from 'react-icons/ri';
 
+import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
+import { axiosReq } from '../../api/axiosDefaults';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { fetchMoreData } from '../../utils/utils';
+import { Navbar, Spinner } from '../../components';
+import ProfilePost from './ProfilePost';
 
 function Profile() {
 

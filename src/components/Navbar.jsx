@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { AiOutlineSearch, AiOutlineLogout } from 'react-icons/ai'
+
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
@@ -10,7 +11,6 @@ const Navbar = ({ searchTerm, setSearchTerm}) => {
   const navigate = useNavigate();
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-
 
   const handleSignOut = async () => {
     try {

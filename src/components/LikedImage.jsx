@@ -34,14 +34,14 @@ function LikedImage() {
                 });
             })
             .catch((error) => {
-                console.log(error);
+
                 setIsLoading(false);
             });
     }, [currentUser]);
 
     return (
         <div className="min-h-screen py-8">
-            <h2 className="text-2xl font-bold mb-4">Liked Images</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-700">Liked Images</h2>
             {isLoading ? (
                 <Spinner />
             ) : likedPosts.length > 0 ? (

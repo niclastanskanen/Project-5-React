@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { FcLike, FcDislike } from 'react-icons/fc';
 
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';
-import Dropdown from '../../components/Dropdown';
-import { FcLike, FcDislike } from 'react-icons/fc';
-import Avatar from '../../components/Avatar';
+import { Avatar, Dropdown } from '../../components';
 
 const ProfilePost = (props) => {
   const {

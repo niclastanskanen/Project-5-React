@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-
 import { useNavigate } from "react-router";
+
 import { axiosReq } from '../../api/axiosDefaults';
 
 function ImageUpload() {
