@@ -64,11 +64,14 @@ Snaptapapp is a closed app for photo enthusiasts who wish to share their daily l
 
 ## User Stories
 
+Due to the deadline for this project, there are still functions that have not been done.
+
+Marked with Upcoming updates as below.
+
 - User Stories - As a user I can view the navbar from every page so that I can easily go by different pages - *Must Have* 
 - User Stories - As a user I can filter photos so that I can find what I want to see faster - *Should Have*
 - User Stories - As a user I can search for photos and categories so that I can find photos - *Must Have*
 - User Stories - As a user I can choose to signup so that I can use all features - *Must Have*
-- User Stories - As a user I can leave a comment on a picture so that I can give support to the creator - *Must Have*
 - User Stories - As a user I can like a picture so that I can give support to the creator - *Must Have*
 - User Stories - As a user I can maintain logged in until I choose to log out so that I don’t have to log in all-time - *Must Have*
 - User Stories - As a user I can see other user’s profiles so that I can get information about them - *Should have*
@@ -77,19 +80,22 @@ Snaptapapp is a closed app for photo enthusiasts who wish to share their daily l
 - User Stories - As a user I can view details of photos so that I can learn more about it - *Must Have*
 - User Stories - As a user I can view all the photos without going to next page so that I can scroll forever - *Must Have*
 - User Stories - As a user I can see date and time for a photo so I can see how old the photo is - *Could Have*
-- User Stories - As a user I can edit my comments so I can fix typos - *Must Have*
-- User Stories - As a user I can delete my comments so I can change my mind and don’t want to comment on a photo - *Must Have*
-- User Stories - As a user I can read other people's comments so that I can read what other people think - *Must have*
 - User Stories - As a user I can see statistics about a specific user: Followers and following so I can find other people to look at - *Should Have*
 - User Stories - As a user I can follow and unfollow other people so that I can choose which photos I want to see - *Should Have*
 - User Stories - As a user I can edit my photos title and description so - that I can fix typos or update details - *Should have*
 - User Stories - As a user I can delete my photos so that I can choose which photo I want to share - *Must have*
-- User Stories - As a user I can login with my google account so that I don’t have to remember my username - *Could have*
-- User Stories - As a user I can signup with my google account so that I don’t need type in my account info - *Could Have*
 - User Stories - As a user I can save photos to my profile so that I can find them faster - *Should Have*
 - User Stories - As a user I can see all my uploaded photos so that I can trace back and see what I have upload - *Should Have*
 - User Stories - As a user I can login so that I can access my account - *Must Have*
 - User Stories - as a User I can sign out so I can’t access my account - *Must Have*
+
+Upcoming updates:
+- User Stories - As a user I can leave a comment on a picture so that I can give support to the creator - *Must Have*
+- User Stories - As a user I can edit my comments so I can fix typos - *Must Have*
+- User Stories - As a user I can delete my comments so I can change my mind and don’t want to comment on a photo - *Must Have*
+- User Stories - As a user I can read other people's comments so that I can read what other people think - *Must have*
+- User Stories - As a user I can login with my google account so that I don’t have to remember my username - *Could have*
+- User Stories - As a user I can signup with my google account so that I don’t need type in my account info - *Could Have*
 
 <hr>
 
@@ -347,7 +353,7 @@ User Stories - As a user I can view details of photos so that I can learn more a
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
 | 1 | Click and visit the image page | Visiting the image detail page displays image, title, content. | :white_check_mark: |
-| 2 | Click and visit the image page | Can see likes and comments | :x: |
+| 2 | Click and visit the image page | Can see likes and comments | :white_check_mark: |
 
 #### User Story [#12](https://github.com/niclastanskanen/project-5-react/issues/12)
 
