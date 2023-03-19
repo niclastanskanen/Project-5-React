@@ -27,7 +27,7 @@ const SignUpForm = () => {
         event.preventDefault();
         try {
             await axios.post('/dj-rest-auth/registration/', signUpData);
-            navigate('/');
+            navigate('/signin');
         } catch (err) {
             setSignupFailed(true);
         }
