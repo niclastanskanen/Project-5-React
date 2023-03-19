@@ -3,11 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 
 import { LikedImage, Navbar, Search, } from '../components';
 import { ImageEdit, ImageFeed, ImageDetail, ImageUpload, ImageCategory, ProfileEditForm, UsernameForm, UserPasswordForm } from '../pages';
-import { useRedirect } from '../hooks/useRedirect';
+
 
 const Feed = () => {
-  useRedirect("loggedOut");
   const [searchTerm, setSearchTerm] = useState('')
+  
   return (
     <div className='px-2 md:px-5'>
       <div className='bg-gray-50'>

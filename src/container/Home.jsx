@@ -10,10 +10,9 @@ import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContex
 import { Avatar, Sidebar } from '../components';
 import { Profile } from '../pages';
 import { removeTokenTimestamp } from '../utils/utils';
-import { useRedirect } from '../hooks/useRedirect';
+
 
 const Home = () => {
-  useRedirect("loggedOut");
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const [toggleSidebar, setToggleSidebar] = useState(false);
