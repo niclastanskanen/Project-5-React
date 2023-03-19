@@ -5,10 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { setTokenTimestamp } from '../../utils/utils';
-import { useRedirect } from '../../hooks/useRedirect';
+
 
 function SignInForm() {
-    useRedirect("loggedIn");
+
     const setCurrentUser = useSetCurrentUser();
     const [signInData, setSignInData] = useState({
         username: "",

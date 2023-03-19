@@ -3,10 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import Logo from '../../assets/logo.png';
-import { useRedirect } from '../../hooks/useRedirect';
+
 
 const SignUpForm = () => {
-    useRedirect("loggedIn");
+
     const [signUpData, setSignUpData] = useState({
         username: "",
         password1: "",
@@ -27,7 +27,7 @@ const SignUpForm = () => {
         event.preventDefault();
         try {
             await axios.post('/dj-rest-auth/registration/', signUpData);
-            navigate('/home');
+            navigate('/');
         } catch (err) {
             setSignupFailed(true);
         }
