@@ -5,7 +5,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 
 const UsernameForm = () => {
-
+  useRedirect("loggedOut");
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState({});
 

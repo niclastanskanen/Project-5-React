@@ -5,7 +5,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 const UserPasswordForm = () => {
-
+  useRedirect("loggedOut");
   const navigate = useNavigate();
   const { id } = useParams();
   const currentUser = useCurrentUser();

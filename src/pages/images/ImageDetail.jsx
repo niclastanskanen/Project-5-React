@@ -5,6 +5,7 @@ import ProfilePost from '../profiles/ProfilePost';
 import { axiosReq } from '../../api/axiosDefaults';
 
 function ImageDetail() {
+
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
 

@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { axiosReq } from '../../api/axiosDefaults';
+import { useRedirect } from '../../hooks/useRedirect';
 
 function ImageEdit() {
-
+    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
     const [postData, setPostData] = useState({
         title: '',

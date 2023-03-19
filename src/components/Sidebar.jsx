@@ -70,6 +70,7 @@ const Sidebar = ({ closeToggle }) => {
           ))}
         </div>
       </div>
+      {currentUser && (
       <Link
         className='flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3'
         to={`/profiles/${currentUser?.profile_id}`}
@@ -79,6 +80,7 @@ const Sidebar = ({ closeToggle }) => {
         <p>{currentUser?.username}</p>
         <AiOutlineArrowRight fontSize={24} />
       </Link>
+      )}
     </div>
   );
 };

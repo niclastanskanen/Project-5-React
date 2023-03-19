@@ -2,8 +2,10 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 
 import { axiosReq } from '../../api/axiosDefaults';
+import { useRedirect } from "../../hooks/useRedirect";
 
 function ImageUpload() {
+    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({
