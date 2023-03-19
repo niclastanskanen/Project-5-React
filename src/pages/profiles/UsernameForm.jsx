@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const UsernameForm = () => {
   useRedirect("loggedOut");

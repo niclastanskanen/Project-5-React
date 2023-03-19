@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { LikedImage, Navbar, Search, } from '../components';
+import { LikedImage, Navbar, NotFound, Search, } from '../components';
 import { ImageEdit, ImageFeed, ImageDetail, ImageUpload, ImageCategory, ProfileEditForm, UsernameForm, UserPasswordForm } from '../pages';
 
 
@@ -26,6 +26,7 @@ const Feed = () => {
           <Route path='/profiles/:id/edit/password' element={<UserPasswordForm />} />
           <Route path='/category/:category' element={<ImageCategory />} />
           <Route path='/likes' element={<LikedImage />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
     </div>
